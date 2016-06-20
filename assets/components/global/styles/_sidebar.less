@@ -1,0 +1,98 @@
+﻿/*侧边栏*/
+@import "qikexiu/_quick";
+
+
+
+.page-sidebar {
+    .pr-position-relative;
+    float: left;
+    width: 300px;
+    min-height: 100%;
+    background-color: @blue;
+    color: white;
+    padding-bottom: 70px;
+
+    header {
+        padding-top: 65px;
+        padding-bottom: 30px;
+        .tc-text-align-center;
+        font-size: 18px;
+
+        img {
+            .wh-width-height(160);
+            border-radius: 50%;
+            border: 6px solid rgba(255,255,255,0.3);
+        }
+
+        .name {
+            font-size: 32px;
+        }
+    }
+
+
+    nav {
+        font-size: 32px;
+        .ca-color(white);
+
+        a {
+            .db-display-block;
+            .hl-heigth-line-h(110);
+
+            &.selected {
+                background-color: white;
+                color: @blue;
+
+                .iconfont {
+                    color: @blue;
+                    .op-opacity(1);
+                }
+            }
+        }
+
+
+        .iconfont {
+            .di-inline-block;
+            .fl-float-left;
+            color: white;
+            .wh-width-height(50,50,50);
+            margin: 30px 20px 30px 30px;
+            .op-opacity(0.4);
+            .fs-font-size(50);
+            .tc-text-align-center;
+        }
+
+
+        .tag {
+            .fl-float-left;
+            .di-inline-block;
+            .wh-width-height(35,35,35);
+            margin-left: 15px;
+            margin-top: (110px - 35) /2;
+            font-size: 20px;
+            color: white;
+            border-radius: 50%;
+            background-color: @yellow;
+            .tc-text-align-center;
+        }
+    }
+
+    footer {
+        .pa-position-absolute;
+        bottom: 20px;
+        .w-width;
+        .tc-text-align-center;
+        font-size: 18px;
+        .ca-color(white);
+    }
+
+
+    .line {
+        .di-inline-block;
+        margin: 0 10px;
+        margin-top: -2px;
+        .w-width(1);
+        .h-height(18);
+        .bc-background-color(white);
+        .vm-vertical-align-middle;
+    }
+}
