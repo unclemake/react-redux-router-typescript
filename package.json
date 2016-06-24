@@ -27,6 +27,7 @@
     "reduce-reducers": "^0.1.2",
     "redux": "^3.5.2",
     "redux-actions": "^0.10.0",
+    "redux-thunk": "^2.1.0",
     "seajs": "^3.0.2",
     "seajs-css": "^1.0.5"
   }

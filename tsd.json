@@ -15,13 +15,19 @@
       "commit": "e325b363f5ee9c72ebde49f1e783ae725f64b7e2"
     },
     "redux/redux.d.ts": {
-      "commit": "e325b363f5ee9c72ebde49f1e783ae725f64b7e2"
+      "commit": "ffd313adf9e5b86d9f04270e4e39b64720317352"
     },
     "react-router/react-router.d.ts": {
       "commit": "e325b363f5ee9c72ebde49f1e783ae725f64b7e2"
     },
     "react-router/history.d.ts": {
       "commit": "e325b363f5ee9c72ebde49f1e783ae725f64b7e2"
+    },
+    "redux-actions/redux-actions.d.ts": {
+      "commit": "830e4aaac859e4f648efaa16712f1d6e378e6902"
+    },
+    "redux-thunk/redux-thunk.d.ts": {
+      "commit": "ffd313adf9e5b86d9f04270e4e39b64720317352"
     }
   }
 }

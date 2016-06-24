@@ -23,11 +23,11 @@ export default class AppRouter extends React.Component<void, void> {
             <Sidebar />
             <main>
                 <Router>
-                    <Redirect from="/" to="home" />
+                    <Redirect from="/" to="reception" />
 
                     <Route path="home" getComponents={ async('../home/index') } />
 
-                    <Route path="login" getComponents={ async('../login/index') } />
+                    <Route path="reception" getComponents={ async('../reception/index') } />
 
                     {//404
                     }

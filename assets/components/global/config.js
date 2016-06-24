@@ -12,6 +12,7 @@
             'react-dom': "node_modules/react-dom/dist/react-dom.min.js",
             'react-router': "node_modules/react-router/umd/ReactRouter.min.js",
             'redux-actions': "node_modules/redux-actions/lib/index.js",
+            'redux-thunk': "node_modules/redux-thunk/lib/index.js",
             'reduce-reducers': "node_modules/reduce-reducers/lib/index.js"
         }
     });

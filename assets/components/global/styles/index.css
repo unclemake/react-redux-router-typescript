@@ -604,14 +604,15 @@ optgroup {
 }
 @font-face {
   font-family: "iconfont";
-  src: url('/assets/components/global/fonts/iconfont.eot');
+  src: url('../fonts/iconfont.eot');
   /* IE9*/
-  src: url('/assets/components/global/fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/assets/components/global/fonts/iconfont.woff') format('woff'), /* chrome, firefox */ url('/assets/components/global/fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('/assets/components/global/fonts/iconfont.svg#iconfont') format('svg');
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/iconfont.woff') format('woff'), /* chrome, firefox */ url('../fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('../fonts/iconfont.svg#iconfont') format('svg');
   /* iOS 4.1- */
 }
 .iconfont {
   font-family: iconfont !important;
   font-style: normal;
+  color: #acb2ba;
   /*-webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: .2px;
     -moz-osx-font-smoothing: grayscale;*/
@@ -827,7 +828,7 @@ select {
   height: 30px;
   line-height: 28px;
   border: 1px solid #4a90e2;
-  font-size: 14px;
+  font-size: 18px;
   text-align: center;
   padding: 0 20px;
   overflow: hidden;
@@ -1097,7 +1098,7 @@ a.btn-disabled:hover,
 一级分割线
 */
 /*
-灰色
+灰色 淡图标颜色
 二级分割线
 */
 /*
@@ -1200,9 +1201,20 @@ a.btn-disabled:hover,
   background-color: white;
   vertical-align: middle;
 }
+body {
+  min-width: 1880px;
+}
 #app {
   height: 100%;
 }
 main {
+  height: 100%;
+  overflow: auto;
+  padding: 40px;
   margin-left: 300px;
+}
+.module {
+  background-color: #ffffff;
+  box-shadow: #acb2ba 0px 0px 10px;
+  border-radius: 5px;
 }
