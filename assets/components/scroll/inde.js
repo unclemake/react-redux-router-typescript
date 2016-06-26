@@ -1,26 +1,22 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import css from './demo.css';
-
-
+define(function(require, exports, module) {"use strict";
+var React = require('react');
+var ReactDOM = require('react-dom');
+require('./dist/demo.css');
 var FreeScrollbarStyles = {
     overflow: 'hidden',
     height: '100%',
     position: 'relative'
 };
-
 var FreeScrollbarScrollbarStyles = {
     position: "absolute",
     top: "0",
     right: "0",
     height: "100%"
 };
-
 var FreeScrollbarHandlerStyles = {
     position: "absolute",
     zIndex: "1"
 };
-
 var FreeScrollbarScrollerStyles = {
     overflowY: "auto",
     height: "100%",
@@ -29,19 +25,17 @@ var FreeScrollbarScrollerStyles = {
     left: "0",
     bottom: "0",
     right: "-20px",
-    paddingRight: "20px"
+    paddingRight: "0px"
 };
-
-export = React.createClass({
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = React.createClass({
     displayName: 'FreeScrollbar',
-
     getDefaultProps() {
         return {
             autoHide: false,
             hideHandler: false
         };
     },
-
     getInitialState() {
         return {
             handlerScrollTop: 0,
@@ -51,19 +45,16 @@ export = React.createClass({
             disableScroll: false
         };
     },
-
     handlerHider: null,
     scrollHandler: null,
-    handlerPositionTop: 0, // the distance between the top of the handler to the mouse
+    handlerPositionTop: 0,
     lastPos: 0,
-
     componentDidMount() {
         window.addEventListener('resize', this.handleResize);
         document.addEventListener('mousemove', this.handleHandlerMouseMove);
         document.addEventListener('mouseup', this.handleHandlerMouseUp);
         this.updateHeight();
     },
-
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize);
         document.removeEventListener('mousemove', this.handleHandlerMouseMove);
@@ -74,26 +65,8 @@ export = React.createClass({
         // Convert to immutable way
         var dynamicStyles = Object.assign({}, { height: `${this.state.height / this.state.scrollHeight * 100}%`, top: this.state.handlerScrollTop.toString() + '%' });
         var handlerStyles = Object.assign(dynamicStyles, FreeScrollbarHandlerStyles);
-        return (
-            <div className="FreeScrollbar"
-                style={FreeScrollbarStyles}>
-                {this.props.hideHandler ? '' : <div className="FreeScrollbar-scrollbar"
-                    style={FreeScrollbarScrollbarStyles}>
-                    {this.state.disableScroll ? '' : <div className={"FreeScrollbar-handler " + (this.state.handlerHide ? 'hide' : '') }
-                        onMouseDown={this.handleHandlerMouseDown}
-                        style={handlerStyles}
-                        ref="handler"/>}
-                </div>}
-                <div className="FreeScrollbar-scroller"
-                    onScroll={this.handleScroll}
-                    ref="scroller"
-                    style={FreeScrollbarScrollerStyles}>
-                    {this.props.children}
-                </div>
-            </div>
-        );
+        return (React.createElement("div", {className: "FreeScrollbar", style: FreeScrollbarStyles}, this.props.hideHandler ? '' : React.createElement("div", {className: "FreeScrollbar-scrollbar", style: FreeScrollbarScrollbarStyles}, this.state.disableScroll ? '' : React.createElement("div", {className: "FreeScrollbar-handler " + (this.state.handlerHide ? 'hide' : ''), onMouseDown: this.handleHandlerMouseDown, style: handlerStyles, ref: "handler"})), React.createElement("div", {className: "FreeScrollbar-scroller", onScroll: this.handleScroll, ref: "scroller", style: FreeScrollbarScrollerStyles}, this.props.children)));
     },
-
     handleScroll(e) {
         clearTimeout(this.handlerHider);
         var pos = e.target.scrollTop / (e.target.scrollHeight - this.state.height) * (1 - this.state.height / this.state.scrollHeight);
@@ -116,42 +89,34 @@ export = React.createClass({
         }
         this.lastPos = pos;
     },
-
     handleResize() {
         this.updateHeight();
     },
-
     componentWillReceiveProps(nextProps) {
         // when updating children
         // should remeasure the heights to decide
         // whether to disable the scroll or not
         this.updateHeight();
     },
-
     handleHandlerMouseDown(e) {
         this.scrollHandler = e.target;
         clearTimeout(this.handlerHider);
         this.setState({ handlerHide: false });
-
         var handler = ReactDOM.findDOMNode(this.refs.handler);
         var handlerOffsetTop = handler.getBoundingClientRect().top;
         this.handlerPositionTop = e.pageY + (window.scrollY || document.documentElement.scrollTop) - handlerOffsetTop;
         console.log(e.pageY, handlerOffsetTop);
     },
-
     handleHandlerMouseMove(e) {
         var scroller = ReactDOM.findDOMNode(this.refs.scroller);
         var scrollerOffsetTop = scroller.getBoundingClientRect().top;
-
         if (this.scrollHandler) {
             var pos = (e.pageY - scrollerOffsetTop) / this.state.height;
-
             var resTop = pos * this.state.scrollHeight - this.handlerPositionTop;
             //resTop = (resTop < 0 ? 0 : ((pos > this.state.height * (1 - this.state.height / this.state.scrollHeight)) ? (this.state.height * (1 - this.state.height / this.state.scrollHeight)) : resTop));
             scroller.scrollTop = resTop;
         }
     },
-
     handleHandlerMouseUp(e) {
         this.scrollHandler = null;
         this.handlerPositionTop = 0;
@@ -160,7 +125,6 @@ export = React.createClass({
             this.setState({ handlerHide: this.props.autoHide });
         }, 1500);
     },
-
     updateHeight() {
         var height = ReactDOM.findDOMNode(this).offsetHeight;
         var scrollHeight = ReactDOM.findDOMNode(this.refs.scroller).scrollHeight;
@@ -171,3 +135,4 @@ export = React.createClass({
         });
     }
 });
+})

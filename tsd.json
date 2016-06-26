@@ -28,6 +28,9 @@
     },
     "redux-thunk/redux-thunk.d.ts": {
       "commit": "ffd313adf9e5b86d9f04270e4e39b64720317352"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "73110d92bdab2367e326f297bef3574285cba329"
     }
   }
 }

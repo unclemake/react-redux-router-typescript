@@ -11,10 +11,17 @@ body {
 }
 
 main {
+    .pr-position-relative;
     .h-height;
     overflow: auto;
     padding: 40px;
     margin-left: 300px;
+
+
+    .main-content {
+        .pr-position-relative;
+        .wh-width-height;
+    }
 }
 
 
@@ -22,4 +29,25 @@ main {
     background-color: @white;
     box-shadow: @gray-dark-m 0px 0px 10px;
     border-radius: 5px;
+}
+
+
+.radio {
+    .pr-position-relative;
+    .di-inline-block;
+    .wh-width-height(26);
+    .bo-border;
+    border-radius: 50%;
+
+    &.selected:before {
+        content: ' ';
+        display: block;
+        .pa-position-absolute;
+        border-radius:50%;
+        left: 7px;
+        right: 7px;
+        top: 7px;
+        bottom: 7px;
+        background-color: @blue;
+    }
 }

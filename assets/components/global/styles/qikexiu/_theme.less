@@ -127,20 +127,21 @@ select {
 /*按钮*/
 .btn {
     .di-inline-block;
-    .br-border-radius(2);
-    .bh-background-color-hover(white);
+    .br-border-radius(5);
+    background-color: @white;
     .cp-cursor-pointer;
-    .h-height(30);
-    .l-line-height(28);
+    .h-height(48);
+    .l-line-height(46);
     .bo-border(@blue);
     font-size: @font-size;
     .tc-text-align-center;
-    padding: 0 20px;
+    padding: 0 25px;
     .oh-overflow-hidden;
     .tr-transition();
     color: @blue;
 
     &:hover {
+        background-color: @gray-light-m;
         color: @blue;
     }
 }
@@ -155,10 +156,12 @@ select {
 }
 
 .btn-big {
-    .h-height(40);
-    .l-line-height(38);
-    .fs-font-size(16);
+    .h-height(46);
+    .l-line-height(42);
+    border-width: 2px;
+    .fs-font-size(24);
     padding: 0 25px;
+    border-radius: 8px;
 }
 
 .btn-huge {

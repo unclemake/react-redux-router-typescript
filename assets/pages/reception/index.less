@@ -32,14 +32,18 @@
         .pt-padding-top(80);
     }
 
+    .chat-list-content {
+        .h-height;
+        padding: 15px 30px;
+    }
+
     .chat-list {
         float: left;
         width: 260px;
-        padding: 15px 30px;
         .h-height;
         border-radius: 0 0 0 5px;
         .bc-background-color(@gray-light-m);
-        overflow: auto;
+        overflow: hidden;
 
         dd {
             .bb-border-bottom(@gray);
@@ -184,6 +188,7 @@
             }
 
             .txt {
+                float: right;
                 .c-color(@black);
                 .bc-background-color(@gray-light-m);
 
@@ -219,6 +224,7 @@
 
         .input-txt {
             .h-height(120);
+            cursor: text;
         }
 
         .btn-send {
@@ -293,6 +299,7 @@
             .btn {
                 .fr-float-right;
                 .wh-width-height(90,40,38);
+                padding: 0;
                 border-radius: 4px;
                 margin-top: 20px;
             }

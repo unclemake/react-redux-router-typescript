@@ -25,7 +25,23 @@ export default class Component extends React.Component<void, void> {
                         <i className="iconfont icon-book"></i>
                     </span>
                     <span className="fl">
+                        短信设置
+                    </span>
+                </a>
+                <a>
+                    <span className="icon">
+                        <i className="iconfont icon-book"></i>
+                    </span>
+                    <span className="fl">
                         信息推送
+                    </span>
+                </a>
+                <a>
+                    <span className="icon">
+                        <i className="iconfont icon-book"></i>
+                    </span>
+                    <span className="fl">
+                        预约管理
                     </span>
                 </a>
                 <a>
@@ -41,7 +57,7 @@ export default class Component extends React.Component<void, void> {
                         <i className="iconfont icon-book"></i>
                     </span>
                     <span className="fl">
-                        健康档案
+                        档案管理
                     </span>
                 </a>
                 <a>
@@ -52,6 +68,14 @@ export default class Component extends React.Component<void, void> {
                         网站维护
                     </span>
                 </a>
+                <a>
+                    <span className="icon">
+                        <i className="iconfont icon-book"></i>
+                    </span>
+                    <span className="fl">
+                        支付管理
+                    </span>
+                </a>
             </nav>
             <footer>
                 <a>中文</a><span className="line"></span><a>English</a>
@@ -59,3 +83,4 @@ export default class Component extends React.Component<void, void> {
         </section>;
     }
 }
+

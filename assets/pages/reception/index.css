@@ -56,14 +56,17 @@
   height: 100%;
   padding-top: 80px;
 }
+.chat-box .chat-list-content {
+  height: 100%;
+  padding: 15px 30px;
+}
 .chat-box .chat-list {
   float: left;
   width: 260px;
-  padding: 15px 30px;
   height: 100%;
   border-radius: 0 0 0 5px;
   background-color: #f6f8f9;
-  overflow: auto;
+  overflow: hidden;
 }
 .chat-box .chat-list dd {
   border-bottom: 1px solid #dfe5ec;
@@ -201,6 +204,7 @@
   right: 0px;
 }
 .chat-box .chat-content .li-right .txt {
+  float: right;
   color: #465468;
   background-color: #f6f8f9;
 }
@@ -230,6 +234,7 @@
 }
 .chat-box .chat-send .input-txt {
   height: 120px;
+  cursor: text;
 }
 .chat-box .chat-send .btn-send {
   height: 48px;
@@ -296,6 +301,7 @@
   width: 90px;
   height: 40px;
   line-height: 38px;
+  padding: 0;
   border-radius: 4px;
   margin-top: 20px;
 }

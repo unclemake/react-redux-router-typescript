@@ -1,0 +1,375 @@
+﻿/**
+*  接待中心
+*/
+@import "../../components/global/styles/qikexiu/_quick";
+
+
+.message-page {
+
+    .message-content {
+        .pa-position-absolute;
+        left: 0px;
+        top: 135px;
+        bottom: 100px;
+        width: 100%;
+    }
+
+    .process-box {
+        margin: 0px 0 35px 0;
+        .cf-clearfix;
+
+        .li {
+            .pr-position-relative;
+            width: 33.3333%;
+            .fl-float-left;
+            .tc-text-align-center;
+            font-size: 18px;
+
+            &:first-of-type {
+                .line-left {
+                    .dn-display-none;
+                }
+            }
+
+            &:last-of-type {
+                .line-right {
+                    .dn-display-none;
+                }
+            }
+
+            &.prev {
+                color: @blue;
+
+                .number span {
+                    background-color: @blue;
+                    color: @white;
+                }
+
+                .line-right, .line-left {
+                    border-top: 1px solid @white;
+                    border-bottom: 1px solid @white;
+                    background-color: @blue;
+                }
+            }
+
+
+            &.selected {
+                color: @blue;
+
+                .number span {
+                    background-color: @blue;
+                    color: @white;
+                }
+
+                .line-left {
+                    border-top: 1px solid @white;
+                    border-bottom: 1px solid @white;
+                    background-color: @blue;
+                }
+            }
+        }
+
+        .number {
+            .pr-position-relative;
+            .db-display-block;
+            .wh-width-height(60);
+            .ma-center-block;
+            margin-bottom: 15px;
+            padding: 5px;
+            background-color: white;
+            font-size: 20px;
+            .tc-text-align-center;
+            border-radius: 50%;
+            box-shadow: @gray-dark 0px 0px 10px;
+
+            span {
+                .wh-width-height;
+                .l-line-height(50);
+                .db-display-block;
+                background-color: @gray-light;
+                border-radius: 50%;
+            }
+        }
+
+
+        .line-left, .line-right {
+            .pa-position-absolute;
+            height: 10px;
+            background-color: white;
+            top: 30px;
+            box-shadow: @gray-dark 0px 0px 10px;
+        }
+
+        .line-left {
+            left: 0px;
+            right: 50%;
+        }
+
+        .line-right {
+            left: 50%;
+            right: 0px;
+        }
+    }
+
+
+
+    .message-box-left {
+        .w-width(435);
+        float: left;
+    }
+
+    .message-box-right {
+        .h-height;
+        background-color: white;
+        border-radius: 5px;
+        margin-left: 500px;
+    }
+
+
+    .seach-box {
+        .pr-position-relative;
+        .w-width;
+        .hl-heigth-line-h(48);
+        .pr-padding-right(70);
+        .pl-padding-left(24);
+        .bo-border;
+        border-radius: 24px;
+        .oh-overflow-hidden;
+        background-color: white;
+
+        input {
+            .w-width;
+            .hl-heigth-line-h(48);
+            border: none;
+            font-size: 24px;
+        }
+
+        .seach-btn {
+            .pa-position-absolute;
+            right: 0px;
+            top: 0px;
+            .w-width(70);
+            .tc-text-align-center;
+            font-size: 40px;
+            .cp-cursor-pointer;
+        }
+
+        .number {
+            color: @black-light;
+        }
+    }
+
+    .group-box {
+
+
+        .group-list {
+            margin-top: 50px;
+        }
+
+        dt {
+            font-size: 24px;
+        }
+
+        dd {
+            float: left;
+            width: 205px;
+            .hl-heigth-line-h(55);
+            padding: 0 20px;
+            margin-right: 25px;
+            margin-top: 25px;
+            background-color: @white;
+
+            &:nth-of-type(2n) {
+                margin-right: 0px;
+            }
+
+            .radio {
+                .fl-float-left;
+                .vm-vertical-align-middle;
+            }
+
+            span {
+                .fl-float-left;
+                width: 95px;
+                margin-left: 15px;
+                .h-height;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .user-list {
+        dl {
+            padding-left: 60px;
+            padding-right: 60px;
+            .l-line-height(50);
+            font-size: 24px;
+        }
+
+        .number {
+            color: @black-light;
+        }
+
+        li {
+            .pr-position-relative;
+            float: left;
+            .wh-width-height(70);
+            margin: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+
+
+            .arrow {
+                .pa-position-absolute;
+                bottom: 0px;
+                right: 0px;
+                border-bottom: 35px solid @blue;
+                border-left: 35px solid transparent;
+            }
+
+            img {
+                .wh-width-height;
+            }
+
+            .iconfont {
+                .pa-position-absolute;
+                right: 0px;
+                bottom: 0px;
+                width: 20px;
+                .tc-text-align-center;
+                line-height: 20px;
+                color: white;
+                font-size: 14px;
+            }
+        }
+    }
+
+
+    .send-box {
+        .l-line-height(100);
+        font-size: 24px;
+
+        .return-btn {
+            .di-inline-block;
+            .wh-width-height(50,50,46);
+            .vm-vertical-align-middle;
+            font-size: 24px;
+            .tc-text-align-center;
+            border-radius: 50%;
+            border: 2px solid @blue;
+
+            span {
+                color: @blue;
+            }
+        }
+    }
+
+
+    .send-success-box {
+        .wh-width-height(520,340);
+        .pa-position-absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -260px;
+        margin-top: -170px;
+        .tc-text-align-center;
+
+        .content {
+            height: 270px;
+            line-height: 270px;
+            font-size: 24px;
+            background-color: @white;
+            box-shadow: @gray-dark 0 0 7px;
+        }
+
+        .txt {
+            line-height: 50px;
+        }
+    }
+
+
+    .message-content-box {
+        .pa-position-absolute;
+        left: 0px;
+        top: 135px;
+        bottom: 0px;
+        width: 100%;
+        .bc-background-color;
+        .bs-box-shadow;
+        border-radius: 5px;
+        padding: 10px 25px 0 25px;
+
+        .message-content-title {
+            .hl-heigth-line-h(91);
+            .bb-border-bottom;
+
+            .seach-box {
+                .mt-margin-top(20);
+                .fr-float-right;
+                .w-width(350);
+            }
+        }
+
+        .filter-list {
+            .fl-float-left;
+            .h-height;
+
+            li {
+                .fl-float-left;
+
+                .btn {
+                    .mt-margin-top(20);
+                    .ml-margin-left(20);
+                }
+            }
+        }
+
+        .content{
+            .h-height(545);
+        }
+    }
+
+    .message-material-list {
+        .pr-position-relative;
+
+        dd {
+            .bb-border-bottom(1,dashed,@border-color);
+            padding: 20px 130px 20px 18px;
+            line-height: 30px;
+            border-radius: 5px;
+
+            .title {
+                .radio {
+                    margin-right: 15px;
+                    float: left;
+                }
+
+                .to-text-overflow;
+                .fb-font-weight-bold;
+            }
+
+            .txt {
+                padding-left: 26px + 15;
+            }
+
+            &.selected {
+                padding: 18px 128px 18px 16px;
+                .bo-border;
+                .bs-box-shadow;
+            }
+        }
+
+        dt {
+            padding: 20px 0;
+            font-size: 24px;
+            line-height: 24px;
+        }
+
+        .seach-btn {
+            .pa-position-absolute;
+            right: 20px;
+            bottom: 40px;
+            font-size: 36px;
+        }
+    }
+}

@@ -64,7 +64,8 @@ th {
   font-weight: normal;
 }
 input:focus,
-textarea:focus {
+textarea:focus,
+div:focus {
   outline: none;
 }
 input::-ms-clear,
@@ -549,87 +550,89 @@ optgroup {
   vertical-align: middle;
   text-align: center;
 }
-.grid-box {
-  margin-left: -30px;
-}
-.grid-box * {
-  margin-left: 30px;
-}
 .grid-1,.grid-2,.grid-3,.grid-4,.grid-5,.grid-6,.grid-7,.grid-8,.grid-9,.grid-10,.grid-11,.grid-12,.grid-13,.grid-14,.grid-15,.grid-16,.grid-17,.grid-18,.grid-19,.grid-20,.grid-21,.grid-22,.grid-23,.grid-24 {
   float: left;
   min-height: 1px;
 }
 .grid-1 {
-  width: -25.83333333%;
+  width: 4.16666667%;
 }
 .grid-2 {
-  width: -21.66666667%;
+  width: 8.33333333%;
 }
 .grid-3 {
-  width: -17.5%;
+  width: 12.5%;
 }
 .grid-4 {
-  width: -13.33333333%;
+  width: 16.66666667%;
 }
 .grid-5 {
-  width: -9.16666667%;
+  width: 20.83333333%;
 }
 .grid-6 {
-  width: -5%;
+  width: 25%;
 }
 .grid-7 {
-  width: -0.83333333%;
+  width: 29.16666667%;
 }
 .grid-8 {
-  width: 3.33333333%;
+  width: 33.33333333%;
 }
 .grid-9 {
-  width: 7.5%;
+  width: 37.5%;
 }
 .grid-10 {
-  width: 11.66666667%;
+  width: 41.66666667%;
 }
 .grid-11 {
-  width: 15.83333333%;
+  width: 45.83333333%;
 }
 .grid-12 {
-  width: 20%;
+  width: 50%;
 }
 .grid-13 {
-  width: 24.16666667%;
+  width: 54.16666667%;
 }
 .grid-14 {
-  width: 28.33333333%;
+  width: 58.33333333%;
 }
 .grid-15 {
-  width: 32.5%;
+  width: 62.5%;
 }
 .grid-16 {
-  width: 36.66666667%;
+  width: 66.66666667%;
 }
 .grid-17 {
-  width: 40.83333333%;
+  width: 70.83333333%;
 }
 .grid-18 {
-  width: 45%;
+  width: 75%;
 }
 .grid-19 {
-  width: 49.16666667%;
+  width: 79.16666667%;
 }
 .grid-20 {
-  width: 53.33333333%;
+  width: 83.33333333%;
 }
 .grid-21 {
-  width: 57.5%;
+  width: 87.5%;
 }
 .grid-22 {
-  width: 61.66666667%;
+  width: 91.66666667%;
 }
 .grid-23 {
-  width: 65.83333333%;
+  width: 95.83333333%;
 }
 .grid-24 {
-  width: 70%;
+  width: 100%;
+}
+.iconimg {
+  display: inline-block;
+  background-image: url(../image/icon.png);
+}
+.iconimg.icon-mail {
+  width: 50px;
+  height: 28px;
 }
 @font-face {
   font-family: "iconfont";
@@ -851,15 +854,15 @@ select {
 /*按钮*/
 .btn {
   display: inline-block;
-  border-radius: 2px;
-  background-color: white;
+  border-radius: 5px;
+  background-color: #ffffff;
   cursor: pointer;
-  height: 30px;
-  line-height: 28px;
+  height: 48px;
+  line-height: 46px;
   border: 1px solid #4a90e2;
   font-size: 18px;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 25px;
   overflow: hidden;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
@@ -867,9 +870,7 @@ select {
   color: #4a90e2;
 }
 .btn:hover {
-  background-color: #ededed;
-}
-.btn:hover {
+  background-color: #f6f8f9;
   color: #4a90e2;
 }
 .btn-sm {
@@ -880,10 +881,12 @@ select {
   border-radius: 0px;
 }
 .btn-big {
-  height: 40px;
-  line-height: 38px;
-  font-size: 16px;
+  height: 46px;
+  line-height: 42px;
+  border-width: 2px;
+  font-size: 24px;
   padding: 0 25px;
+  border-radius: 8px;
 }
 .btn-huge {
   height: 46px;

@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, Link, IndexLink, Redirect } from 'react-rout
 
 
 import Sidebar from '../sidebar/index';
+import Reception from '../reception/index';
 
 
 function async(text) {
@@ -23,16 +24,10 @@ export default class AppRouter extends React.Component<void, void> {
             <Sidebar />
             <main>
                 <Router>
-                    <Redirect from="/" to="reception" />
-
-                    <Route path="home" getComponents={ async('../home/index') } />
-
+                    <Redirect from="/" to="message" />
+                    <Route path="message" getComponents={ async('../message/index') } />
                     <Route path="reception" getComponents={ async('../reception/index') } />
-
-                    {//404
-                    }
-                    <Route  path="/*" getComponents={ async('../error/index') } />
-                </Router >
+                </Router>
             </main>
         </div>;
     }
