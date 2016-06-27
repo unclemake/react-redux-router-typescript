@@ -18,7 +18,7 @@ const initialState: State = {
             name: '素材库',
             selected: true
         }, {
-            id: 1,
+            id: 2,
             name: '就医指南',
             selected: false
         }
@@ -36,7 +36,7 @@ const initialState: State = {
             labelId: 2,
             title: '饭后不能立即吃水果2',
             content: '吃吃吃吃吃',
-            selected: true
+            selected: false
         }
     ],
 

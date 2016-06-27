@@ -349,6 +349,50 @@
 }
 
 
+.create-margin-padding(@value) {
+    .m@{value} {
+        .m-margin(@value);
+    }
+
+    .ml@{value} {
+        .ml-margin-left(@value);
+    }
+
+    .mr@{value} {
+        .mr-margin-right(@value);
+    }
+
+    .mt@{value} {
+        .mt-margin-top(@value);
+    }
+
+    .mb@{value} {
+        .mb-margin-bottom(@value);
+    }
+
+
+    .p@{value} {
+        .p-padding(@value);
+    }
+
+    .pl@{value} {
+        .pl-padding-left(@value);
+    }
+
+    .pr@{value} {
+        .pr-padding-right(@value);
+    }
+
+    .pt@{value} {
+        .pt-padding-top(@value);
+    }
+
+    .pb@{value} {
+        .pb-padding-bottom(@value);
+    }
+}
+
+.create-margin-padding(100);
 
 //字体大小
 .f12 {

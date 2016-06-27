@@ -22,7 +22,7 @@ class Checkbox extends React.Component {
      * @param only
      */
     renderCheckbox(only = true) {
-        let className = this.className;
+        let className = this.className + ' ';
         className += this.state.checked ? ' selected ' : '';
         className += only && this.props.className ? this.props.className : '';
         return React.createElement("div", {className: className, onClick: only && this.click.bind(this)});

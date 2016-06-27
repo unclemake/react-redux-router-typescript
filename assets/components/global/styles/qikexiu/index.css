@@ -524,6 +524,36 @@ optgroup {
 .mr40 {
   margin-right: 40px;
 }
+.m100 {
+  margin: 100;
+}
+.ml100 {
+  margin-left: 100px;
+}
+.mr100 {
+  margin-right: 100px;
+}
+.mt100 {
+  margin-top: 100px;
+}
+.mb100 {
+  margin-bottom: 100px;
+}
+.p100 {
+  padding: 100px;
+}
+.pl100 {
+  padding-left: 100px;
+}
+.pr100 {
+  padding-right: 100px;
+}
+.pt100 {
+  padding-top: 100px;
+}
+.pb100 {
+  padding-bottom: 100px;
+}
 .f12 {
   font-size: 12px;
 }
@@ -778,9 +808,9 @@ a {
   transition: color 0.8s;
   -webkit-transition: color 0.8s;
   /* Safari 和 Chrome */
-}
-a[href]:hover {
   cursor: pointer;
+}
+a:hover {
   color: #4a90e2;
 }
 /*字体颜色*/
@@ -1027,22 +1057,6 @@ a.btn-disabled:hover,
   color: #c4cad3;
   background-color: #dfe5ec;
   border: 1px solid #dfe5ec;
-}
-/*表格*/
-.table {
-  width: 100%;
-}
-.table th {
-  width: 84px;
-  max-width: 84px;
-  padding: 8px;
-  border-bottom: 1px solid #c4cad3;
-  border-right: 1px solid #c4cad3;
-  line-height: 36px;
-}
-.table td {
-  border-bottom: 1px solid #c4cad3;
-  padding: 8px;
 }
 /*输入框*/
 .text {

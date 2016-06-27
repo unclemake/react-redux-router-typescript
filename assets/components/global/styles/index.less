@@ -45,10 +45,10 @@ main {
         display: block;
         .pa-position-absolute;
         border-radius: 50%;
-        left: 7px;
-        right: 7px;
-        top: 7px;
-        bottom: 7px;
+        left: 4px;
+        right: 4px;
+        top: 4px;
+        bottom: 4px;
         background-color: @blue;
     }
 }
@@ -69,5 +69,82 @@ main {
         top: 4px;
         bottom: 4px;
         background-color: @blue;
+    }
+}
+
+/*ËÑË÷box*/
+.seach-box {
+    .pr-position-relative;
+    .hl-heigth-line-h(48);
+    .pr-padding-right(70);
+    .pl-padding-left(24);
+    .bo-border;
+    border-radius: 24px;
+    .oh-overflow-hidden;
+    background-color: white;
+
+    input {
+        .w-width;
+        .hl-heigth-line-h(48);
+        border: none;
+        font-size: 24px;
+    }
+
+    .seach-btn {
+        .pa-position-absolute;
+        right: 0px;
+        top: 0px;
+        .w-width(70);
+        .tc-text-align-center;
+        font-size: 40px;
+        .cp-cursor-pointer;
+    }
+
+    .number {
+        color: @black-light;
+    }
+}
+
+
+.main-content {
+    .pr-position-relative;
+    .wh-width-height;
+}
+
+
+/*±í¸ñ*/
+.table {
+    .w-width;
+    .l-line-height(30);
+
+    th, td {
+        padding-left: 30px;
+        vertical-align: middle;
+    }
+
+    th {
+        height: 46px;
+        .bc-background-color(@gray-light);
+    }
+
+    td {
+        padding: 20px;
+        padding-left: 30px;
+    }
+}
+
+
+.table-vertical {
+    .w-width;
+    .l-line-height(60);
+
+    th, td {
+        padding-left: 60px;
+        vertical-align: middle;
+    }
+
+    th {
+        width: 210px;
+        color: @black-light;
     }
 }

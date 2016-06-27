@@ -33,7 +33,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
      * @param only
      */
     renderCheckbox(only: boolean = true) {
-        let className = this.className;
+        let className = this.className + ' ';
         className += this.state.checked ? ' selected ' : '';
         className += only && this.props.className ? this.props.className : '';
 

@@ -27,9 +27,9 @@ html, body {
 a {
     color: @a-color;
     .tr-transition(color 0.8s);
+    cursor: pointer;
 
-    &[href]:hover {
-        cursor: pointer;
+    &:hover {
         color: @a-color-hover;
     }
 }
@@ -295,24 +295,6 @@ select {
     }
 }
 
-/*表格*/
-.table {
-    .w-width;
-
-    th {
-        width: 84px;
-        max-width: 84px;
-        padding: 8px;
-        .bb-border-bottom(1);
-        .br-border-right(1);
-        .l-line-height(36);
-    }
-
-    td {
-        .bb-border-bottom(1);
-        padding: 8px;
-    }
-}
 
 
 

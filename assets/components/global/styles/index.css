@@ -495,6 +495,36 @@ optgroup {
 .mr40 {
   margin-right: 40px;
 }
+.m100 {
+  margin: 100;
+}
+.ml100 {
+  margin-left: 100px;
+}
+.mr100 {
+  margin-right: 100px;
+}
+.mt100 {
+  margin-top: 100px;
+}
+.mb100 {
+  margin-bottom: 100px;
+}
+.p100 {
+  padding: 100px;
+}
+.pl100 {
+  padding-left: 100px;
+}
+.pr100 {
+  padding-right: 100px;
+}
+.pt100 {
+  padding-top: 100px;
+}
+.pb100 {
+  padding-bottom: 100px;
+}
 .f12 {
   font-size: 12px;
 }
@@ -749,9 +779,9 @@ a {
   transition: color 0.8s;
   -webkit-transition: color 0.8s;
   /* Safari 和 Chrome */
-}
-a[href]:hover {
   cursor: pointer;
+}
+a:hover {
   color: #4a90e2;
 }
 /*字体颜色*/
@@ -999,22 +1029,6 @@ a.btn-disabled:hover,
   background-color: #dfe5ec;
   border: 1px solid #dfe5ec;
 }
-/*表格*/
-.table {
-  width: 100%;
-}
-.table th {
-  width: 84px;
-  max-width: 84px;
-  padding: 8px;
-  border-bottom: 1px solid #c4cad3;
-  border-right: 1px solid #c4cad3;
-  line-height: 36px;
-}
-.table td {
-  border-bottom: 1px solid #c4cad3;
-  padding: 8px;
-}
 /*输入框*/
 .text {
   width: 200px;
@@ -1241,10 +1255,10 @@ main .main-content {
   display: block;
   position: absolute;
   border-radius: 50%;
-  left: 7px;
-  right: 7px;
-  top: 7px;
-  bottom: 7px;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+  bottom: 4px;
   background-color: #4a90e2;
 }
 .checkbox {
@@ -1264,4 +1278,71 @@ main .main-content {
   top: 4px;
   bottom: 4px;
   background-color: #4a90e2;
+}
+/*����box*/
+.seach-box {
+  position: relative;
+  height: 48px;
+  line-height: 48px;
+  padding-right: 70px;
+  padding-left: 24px;
+  border: 1px solid #c4cad3;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: white;
+}
+.seach-box input {
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  border: none;
+  font-size: 24px;
+}
+.seach-box .seach-btn {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 70px;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+.seach-box .number {
+  color: #8a95a5;
+}
+.main-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+/*����*/
+.table {
+  width: 100%;
+  line-height: 30px;
+}
+.table th,
+.table td {
+  padding-left: 30px;
+  vertical-align: middle;
+}
+.table th {
+  height: 46px;
+  background-color: #eff1f3;
+}
+.table td {
+  padding: 20px;
+  padding-left: 30px;
+}
+.table-vertical {
+  width: 100%;
+  line-height: 60px;
+}
+.table-vertical th,
+.table-vertical td {
+  padding-left: 60px;
+  vertical-align: middle;
+}
+.table-vertical th {
+  width: 210px;
+  color: #8a95a5;
 }

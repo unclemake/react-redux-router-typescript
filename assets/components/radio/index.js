@@ -27,12 +27,12 @@ class Main extends React.Component {
     }
     componentDidMount() {
         if (!radioList[this.props.name]) {
-            radioList[this.props.name] = [() => {
+            radioList[this.props.name] = [function () {
                     this.change(false);
                 }];
         }
         else {
-            radioList[this.props.name].push(() => {
+            radioList[this.props.name].push(function () {
                 this.change(false);
             });
         }

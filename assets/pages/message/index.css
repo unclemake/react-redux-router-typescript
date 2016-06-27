@@ -140,37 +140,6 @@
   border-radius: 5px;
   margin-left: 500px;
 }
-.message-page .seach-box {
-  position: relative;
-  width: 100%;
-  height: 48px;
-  line-height: 48px;
-  padding-right: 70px;
-  padding-left: 24px;
-  border: 1px solid #c4cad3;
-  border-radius: 24px;
-  overflow: hidden;
-  background-color: white;
-}
-.message-page .seach-box input {
-  width: 100%;
-  height: 48px;
-  line-height: 48px;
-  border: none;
-  font-size: 24px;
-}
-.message-page .seach-box .seach-btn {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  width: 70px;
-  text-align: center;
-  font-size: 40px;
-  cursor: pointer;
-}
-.message-page .seach-box .number {
-  color: #8a95a5;
-}
 .message-page .group-box .group-list {
   margin-top: 50px;
 }
@@ -301,6 +270,7 @@
   text-align: center;
   border-radius: 50%;
   border: 2px solid #4a90e2;
+  cursor: pointer;
 }
 .message-page .send-box .return-btn span {
   color: #4a90e2;
