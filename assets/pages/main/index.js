@@ -8,13 +8,21 @@ function async(text) {
     return (location, callback) => {
         console.log('加载：' + text);
         require.async(text, (mod) => {
-            callback(null, mod.default);
+            var Com = mod.default;
+            callback(null, (prop) => {
+                return React.createElement(Main, __assign({}, prop), React.createElement(Com, null));
+            });
         });
     };
 }
+class Main extends React.Component {
+    render() {
+        return React.createElement("div", {className: "h100"}, React.createElement(index_1.default, __assign({}, this.props)), React.createElement("main", null, this.props.children));
+    }
+}
 class AppRouter extends React.Component {
     render() {
-        return React.createElement("div", {className: "h100"}, React.createElement(index_1.default, null), React.createElement("main", null, React.createElement(react_router_1.Router, null, React.createElement(react_router_1.Redirect, {from: "/", to: "message"}), React.createElement(react_router_1.Route, {path: "message", getComponents: async('../message/index')}), React.createElement(react_router_1.Route, {path: "reception", getComponents: async('../reception/index')}))));
+        return React.createElement(react_router_1.Router, {history: react_router_1.hashHistory}, React.createElement(react_router_1.Redirect, {from: "/", to: "message"}), React.createElement(react_router_1.Route, {path: "/message", getComponents: async('../message/index')}), React.createElement(react_router_1.Route, {path: "/reception", getComponents: async('../reception/index')}));
     }
 }
 Object.defineProperty(exports, "__esModule", { value: true });

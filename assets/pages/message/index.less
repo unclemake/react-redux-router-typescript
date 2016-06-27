@@ -5,6 +5,10 @@
 
 
 .message-page {
+    .lable-cont {
+        .hl-heigth-line-h(60);
+        color: @black-light;
+    }
 
     .message-content {
         .pa-position-absolute;
@@ -161,13 +165,19 @@
 
     .group-box {
 
-
         .group-list {
             margin-top: 50px;
         }
 
         dt {
             font-size: 24px;
+            .cf-clearfix;
+
+            .checkbox {
+                float: left;
+                margin-top: 4px;
+                margin-right: 5px;
+            }
         }
 
         dd {
@@ -183,14 +193,15 @@
                 margin-right: 0px;
             }
 
-            .radio {
+            .checkbox {
                 .fl-float-left;
+                .mt-margin-top((55 - 26) /2);
                 .vm-vertical-align-middle;
             }
 
-            span {
+            .txt {
                 .fl-float-left;
-                width: 95px;
+                width: 90px;
                 margin-left: 15px;
                 .h-height;
                 overflow: hidden;
@@ -206,8 +217,24 @@
             font-size: 24px;
         }
 
+        .check-img {
+            .wh-width-height;
+        }
+
+        .checkbox {
+            float: left;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+
         .number {
+            margin-left: 10px;
             color: @black-light;
+        }
+
+        ul {
+            padding-left: 15px;
+            .cf-clearfix;
         }
 
         li {
@@ -218,8 +245,8 @@
             border-radius: 5px;
             overflow: hidden;
 
-
             .arrow {
+                .dn-display-none;
                 .pa-position-absolute;
                 bottom: 0px;
                 right: 0px;
@@ -232,6 +259,7 @@
             }
 
             .iconfont {
+                .dn-display-none;
                 .pa-position-absolute;
                 right: 0px;
                 bottom: 0px;
@@ -241,11 +269,25 @@
                 color: white;
                 font-size: 14px;
             }
+
+            .check-img.selected {
+                .arrow {
+                    display: block;
+                }
+
+                .iconfont {
+                    display: block;
+                }
+            }
         }
     }
 
 
     .send-box {
+        .pa-position-absolute;
+        left: 0;
+        bottom: 0;
+        .w-width;
         .l-line-height(100);
         font-size: 24px;
 
@@ -299,6 +341,12 @@
         border-radius: 5px;
         padding: 10px 25px 0 25px;
 
+        .message-content-box-c {
+            .pr-position-relative;
+            .w-width;
+            .h-height;
+        }
+
         .message-content-title {
             .hl-heigth-line-h(91);
             .bb-border-bottom;
@@ -324,8 +372,12 @@
             }
         }
 
-        .content{
-            .h-height(545);
+        .content {
+            .pa-position-absolute;
+            .w-width;
+            top: 91px;
+            bottom: 100px;
+            left: 0px;
         }
     }
 
@@ -333,6 +385,7 @@
         .pr-position-relative;
 
         dd {
+            .pr-position-relative;
             .bb-border-bottom(1,dashed,@border-color);
             padding: 20px 130px 20px 18px;
             line-height: 30px;
@@ -360,7 +413,7 @@
         }
 
         dt {
-            padding: 20px 0;
+            margin: 20px 0;
             font-size: 24px;
             line-height: 24px;
         }

@@ -38,16 +38,36 @@ main {
     .wh-width-height(26);
     .bo-border;
     border-radius: 50%;
+    .bc-background-color;
 
     &.selected:before {
         content: ' ';
         display: block;
         .pa-position-absolute;
-        border-radius:50%;
+        border-radius: 50%;
         left: 7px;
         right: 7px;
         top: 7px;
         bottom: 7px;
+        background-color: @blue;
+    }
+}
+
+.checkbox {
+    .pr-position-relative;
+    .di-inline-block;
+    .wh-width-height(26);
+    .bo-border;
+    .bc-background-color;
+
+    &.selected:before {
+        content: ' ';
+        display: block;
+        .pa-position-absolute;
+        left: 4px;
+        right: 4px;
+        top: 4px;
+        bottom: 4px;
         background-color: @blue;
     }
 }

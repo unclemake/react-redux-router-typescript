@@ -1,9 +1,11 @@
 ﻿/// <reference path="../index.d.ts" />
 import * as React from 'react';
+import { Router, Route, IndexRoute, Link, IndexLink, Redirect } from 'react-router';
 
 
-export default class Component extends React.Component<void, void> {
+export default class Component extends React.Component<ReactRouter.RouteComponentProps<void, void>, void> {
     render() {
+        let pathname = this.props.location.pathname;
         return <section className="page-sidebar">
             <header>
                 <img src="components/global/image/head.png" />
@@ -13,21 +15,21 @@ export default class Component extends React.Component<void, void> {
                 </p>
             </header>
             <nav>
-                <a className="selected">
+                <Link className={pathname == '/reception' ? 'selected' : ''} to="/reception">
                     <i className="iconfont icon-book"></i>
                     <span className="fl">
                         接待中心
                     </span>
                     <span className="tag">28</span>
-                </a>
-                <a>
+                </Link>
+                <Link  className={pathname == '/message' ? 'selected' : ''} to="/message">
                     <span className="icon">
                         <i className="iconfont icon-book"></i>
                     </span>
                     <span className="fl">
                         短信设置
                     </span>
-                </a>
+                </Link>
                 <a>
                     <span className="icon">
                         <i className="iconfont icon-book"></i>

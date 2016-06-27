@@ -15,7 +15,7 @@ const store = redux_1.createStore(reducer_1.frootReducer, redux_1.applyMiddlewar
 //渲染
 class App extends React.Component {
     render() {
-        return React.createElement(react_redux_1.Provider, {store: store}, React.createElement(index_1.default, null));
+        return React.createElement(react_redux_1.Provider, __assign({store: store}, this.props), React.createElement(index_1.default, null));
     }
 }
 Object.defineProperty(exports, "__esModule", { value: true });
