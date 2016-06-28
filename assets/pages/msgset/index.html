@@ -9,8 +9,61 @@
 </head>
 <body>
     <main>
-        <section class="msgset-page">
-            <section class="seach-box"><input type="text" placeholder="输入标签名"><a class="iconfont icon-seach seach-btn"></a><div class="number">分组标签&nbsp; 3/10</div></section>
+        <section class="msgset-page main-content-bg">
+            <h2>短信设置 <span class="ml20 f18 black">设置哪些功能开启短信提醒</span></h2>
+            <div class="msgset-content">
+                <h3>预约提醒</h3>
+                <ul class="set-list">
+                    <li>
+                        <p class="title">
+                            <input type="checkbox" />预约就诊的前一天<span class="ml30 f14 black">其中[date]为系统变量，会自动生成预约时间，格式如2016-06-01 13:00-17:00</span>
+                        </p>
+                        <p class="txt-title black">
+                            短信内容:
+                        </p>
+                        <p class="txt">
+                            【仁济医院】您好，您预约了明天到“仁济医院国际门诊”就诊，就诊时间[date]，就诊地点：上海市浦东新区北园路33号，联系电话：0086-21-68383408。
+                        </p>
+                    </li>
+                    <li>
+                        <p class="title">
+                            <input type="checkbox" />预约成功
+                        </p>
+                        <p class="txt-title black">
+                            短信内容:
+                        </p>
+                        <p class="txt">
+                            【仁济医院】您好，您预约了明天到“仁济医院国际门诊”就诊，就诊时间[date]，就诊地点：上海市浦东新区北园路33号，联系电话：0086-21-68383408。
+                        </p>
+                    </li>
+                    <li>
+                        <p class="title">
+                            <input type="checkbox" />就诊叫号提醒
+                        </p>
+                        <p class="txt-title black">
+                            短信内容:
+                        </p>
+                        <p class="txt">
+                            【仁济医院】您现在可以就诊，请到护士台。
+                        </p>
+                    </li>
+                    <li>
+                        <p class="title">
+                            <input type="checkbox" />健康档案更新提醒
+                        </p>
+                        <p class="txt-title black">
+                            短信内容:
+                        </p>
+                        <p class="txt">
+                            【仁济医院】您好，您的健康档案有更新，请到“仁济微网站-个人中心-健康档案”查看。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tc mt100 save-box">
+                <a class="btn btn-huge">保存</a>
+                <a class="btn btn-huge btn-gray-bo ml40">取消</a>
+            </div>
         </section>
     </main>
 </body>

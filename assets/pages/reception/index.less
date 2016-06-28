@@ -129,79 +129,6 @@
             right: 0px;
             bottom: 250px;
         }
-
-
-        .li {
-            .pr-position-relative;
-            margin: 15px;
-            .cf-clearfix;
-        }
-
-        .head {
-            .pa-position-absolute;
-            left: 0px;
-            top: 0px;
-            .wh-width-height(65);
-            border-radius: 50%;
-        }
-
-        .txt {
-            .pr-position-relative;
-            float: left;
-            .di-inline-block;
-            margin: 8px 100px 7px 100px;
-            padding: 10px 25px;
-            .l-line-height(30);
-            .bc-background-color(@blue);
-            color: white;
-            border-radius: 6px;
-
-
-            .icon {
-                position: absolute;
-                left: -8px;
-                top: 16px;
-                width: 0;
-                height: 0;
-                border-top: 8px solid transparent;
-                border-right: 8px solid @blue;
-                border-bottom: 8px solid transparent;
-            }
-        }
-
-        .time {
-            .tc-text-align-center;
-
-            time {
-                .di-inline-block;
-                padding: 0 6px;
-                .hl-heigth-line-h(30);
-                .bc-background-color(@gray-light-m);
-                border-radius: 3px;
-            }
-        }
-
-        .li-right {
-            .head {
-                left: auto;
-                right: 0px;
-            }
-
-            .txt {
-                float: right;
-                .c-color(@black);
-                .bc-background-color(@gray-light-m);
-
-                .icon {
-                    left: auto;
-                    right: -8px;
-                    border-right: none;
-                    border-top: 8px solid transparent;
-                    border-left: 8px solid @gray-light-m;
-                    border-bottom: 8px solid transparent;
-                }
-            }
-        }
     }
 
     .chat-send {
@@ -238,8 +165,82 @@
 }
 
 
+.chat-list-box {
+    .li {
+        .pr-position-relative;
+        margin: 15px;
+        .cf-clearfix;
+    }
+
+    .head {
+        .pa-position-absolute;
+        left: 0px;
+        top: 0px;
+        .wh-width-height(65);
+        border-radius: 50%;
+    }
+
+    .txt {
+        .pr-position-relative;
+        float: left;
+        .di-inline-block;
+        margin: 8px 100px 7px 100px;
+        padding: 10px 25px;
+        .l-line-height(30);
+        .bc-background-color(@blue);
+        color: white;
+        border-radius: 6px;
+
+
+        .icon {
+            position: absolute;
+            left: -8px;
+            top: 16px;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-right: 8px solid @blue;
+            border-bottom: 8px solid transparent;
+        }
+    }
+
+    .time {
+        .tc-text-align-center;
+
+        time {
+            .di-inline-block;
+            padding: 0 6px;
+            .hl-heigth-line-h(30);
+            .bc-background-color(@gray-light-m);
+            border-radius: 3px;
+        }
+    }
+
+    .li-right {
+        .head {
+            left: auto;
+            right: 0px;
+        }
+
+        .txt {
+            float: right;
+            .c-color(@black);
+            .bc-background-color(@gray-light-m);
+
+            .icon {
+                left: auto;
+                right: -8px;
+                border-right: none;
+                border-top: 8px solid transparent;
+                border-left: 8px solid @gray-light-m;
+                border-bottom: 8px solid transparent;
+            }
+        }
+    }
+}
+
+
 .order-box {
-    float: right;
     .w-width(400);
     .h-height;
 

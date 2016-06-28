@@ -43,6 +43,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-size: inherit;
   font-weight: normal;
 }
 input {
@@ -566,6 +567,12 @@ optgroup {
 .f16 {
   font-size: 16px;
 }
+.f18 {
+  font-size: 18px;
+}
+.f20 {
+  font-size: 20px;
+}
 .ma {
   margin-left: auto;
   margin-right: auto;
@@ -818,7 +825,7 @@ a:hover {
   color: white;
 }
 .black {
-  color: #465468;
+  color: #8a95a5;
 }
 .gray {
   color: #c4cad3;
@@ -903,27 +910,6 @@ select {
   background-color: #f6f8f9;
   color: #4a90e2;
 }
-.btn-sm {
-  height: 24px;
-  line-height: 22px;
-  font-size: 12px;
-  padding: 0 10px;
-  border-radius: 0px;
-}
-.btn-big {
-  height: 46px;
-  line-height: 42px;
-  border-width: 2px;
-  font-size: 24px;
-  padding: 0 25px;
-  border-radius: 8px;
-}
-.btn-huge {
-  height: 46px;
-  line-height: 44px;
-  font-size: 18px;
-  padding: 0 30px;
-}
 .btn-white {
   border: 1px solid #c4cad3;
   color: #465468;
@@ -959,6 +945,13 @@ select {
 .btn-gray:hover {
   color: white;
   border: 1px solid #aab6bb;
+}
+.btn-gray-bo {
+  color: #8a95a5;
+  border: 1px solid #8a95a5;
+}
+.btn-gray-bo:hover {
+  color: #8a95a5;
 }
 .btn-pink {
   color: white;
@@ -1058,11 +1051,34 @@ a.btn-disabled:hover,
   background-color: #dfe5ec;
   border: 1px solid #dfe5ec;
 }
+.btn-sm {
+  height: 24px;
+  line-height: 22px;
+  font-size: 12px;
+  padding: 0 10px;
+  border-radius: 0px;
+}
+.btn-big {
+  height: 46px;
+  line-height: 42px;
+  border-width: 2px;
+  font-size: 24px;
+  padding: 0 25px;
+  border-radius: 8px;
+}
+.btn-huge {
+  min-width: 145px;
+  height: 60px;
+  line-height: 56px;
+  border-width: 2px;
+  font-size: 24px;
+  padding: 0 30px;
+}
 /*输入框*/
 .text {
   width: 200px;
-  height: 36px;
-  line-height: 34px;
+  height: 48px;
+  line-height: 46px;
   padding-left: 5px;
   border: 1px solid #ccc;
   vertical-align: middle;

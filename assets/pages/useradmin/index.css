@@ -1,0 +1,85 @@
+/**
+*  接待中心
+*/
+/*@black-dark: #465468; //暗黑色*/
+/*
+    黑色
+    默认字色
+*/
+/*
+  亮黑色
+  二级字色
+*/
+/*
+  最暗的灰色
+  图标颜色
+*/
+/*
+暗灰色 滚动条颜色
+一级分割线
+*/
+/*
+灰色 淡图标颜色
+二级分割线
+*/
+/*
+亮灰色
+网站背景色
+*/
+/*
+最亮的灰色
+背景色
+*/
+.history-page {
+  padding: 0px;
+}
+.history-page .grid-12 {
+  padding: 30px;
+}
+.history-page .history-seach-box {
+  padding-right: 80px;
+}
+.history-page .br1 {
+  border-right: 1px solid #c4cad3;
+}
+.history-page .time-box {
+  margin: 30px 0;
+  height: 32px;
+  line-height: 32px;
+}
+.history-page .user-list .head {
+  float: left;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.history-page .user-list li {
+  padding: 15px;
+  margin-bottom: 15px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+.history-page .user-list li:before,
+.history-page .user-list li:after {
+  content: " ";
+  display: table;
+}
+.history-page .user-list li:after {
+  clear: both;
+}
+.history-page .user-list li.selected {
+  border: 1px solid #4a90e2;
+}
+.history-page .user-list li.selected .td {
+  color: #4a90e2;
+}
+.history-page .user-list .th {
+  float: left;
+  color: #8a95a5;
+  margin-right: 15px;
+}
+.history-page .user-list .td {
+  float: left;
+  width: 110px;
+}
