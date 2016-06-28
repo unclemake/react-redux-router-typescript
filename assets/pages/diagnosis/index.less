@@ -1,0 +1,294 @@
+﻿/**
+*  接待中心
+*/
+@import "../../components/global/styles/qikexiu/_quick";
+
+
+
+
+.diagnosis-page {
+    .pr-position-relative;
+    .h-height;
+
+    .right-box {
+        .pr-position-relative;
+        .h-height;
+        margin-left: 430px;
+    }
+
+    .user-table {
+        width: 100%;
+
+        th {
+            padding-right: 10px;
+            text-align: right;
+            color: @black-light;
+        }
+
+        td {
+            font-size: 24px;
+        }
+    }
+
+    .user-data {
+        .pr-position-relative;
+        .bc-background-color;
+        .bs-box-shadow;
+        border-radius: 5px;
+        padding: 20px;
+        line-height: 60px;
+        z-index: 1;
+
+        h3 {
+            .tc-text-align-center;
+            font-size: 28px;
+        }
+
+        .show-more-btn {
+            .pa-position-absolute;
+            .wh-width-height(60,30);
+            .hl-heigth-line-h(30);
+            .bc-background-color(@blue);
+            .tc-text-align-center;
+            top: 100%;
+            left: 50%;
+            margin-left: -30px;
+            border-radius: 0px 0px 3px 3px;
+
+            .iconfont {
+                color: white;
+            }
+        }
+    }
+
+
+    .user-content {
+        .pa-position-absolute;
+        left: 0px;
+        top: 220px;
+        bottom: 0px;
+        .w-width;
+        padding: 30px;
+        .bc-background-color;
+        .bs-box-shadow;
+        border-radius: 5px;
+
+        table {
+            .w-width;
+
+
+            td, th {
+                padding: 20px;
+            }
+
+            th {
+                font-size: 24px;
+                color: @black-light;
+                width: 120px;
+                vertical-align: top;
+                padding-right: 0px;
+            }
+
+
+            .text {
+                .w-width;
+            }
+
+            .textarea {
+                .w-width;
+                .h-height(290);
+            }
+        }
+    }
+
+
+    .patient-box {
+
+        .patient-content {
+            .pa-position-absolute;
+            .w-width;
+            left: 0px;
+            top: 90px;
+            bottom: 340px;
+
+            .center-box {
+                .pr-position-relative;
+                top: 50%;
+                margin-top: 525px / 2;
+            }
+        }
+
+        .title {
+            margin-top: 15px;
+            font-size: 40px;
+            line-height: 40px;
+        }
+
+        .name {
+            margin-top: 20px;
+            font-size: 64px;
+            .tc-text-align-center;
+        }
+
+        .phote {
+            .tc-text-align-center;
+
+            img {
+                .wh-width-height(290);
+                border-radius: 50%;
+            }
+        }
+
+        .fun {
+            font-size: 40px;
+            .l-line-height(70);
+            .mt-margin-top(55);
+
+            .grid-12 {
+                padding: 0 20px;
+            }
+        }
+
+        .bo-l {
+            .br-border-right;
+        }
+
+
+        .patient-msg {
+            .pa-position-absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            .bt-border-top;
+            .h-height(340);
+            .tc-text-align-center;
+            .fs-font-size(48);
+
+            .grid-12 {
+                padding-top: 50px;
+                .l-line-height(120);
+                .h-height;
+            }
+
+            .f64 {
+                font-size: 64px;
+            }
+        }
+    }
+
+
+    .archives-box {
+        .pa-position-absolute;
+        top: 220px;
+        bottom: 0px;
+        .w-width;
+        padding: 45px;
+        .bs-box-shadow;
+        border-radius: 5px;
+        .bc-background-color;
+    }
+
+    .archives-table {
+        width: 100%;
+        font-size: 32px;
+        line-height: 72px;
+        border-bottom: 1px dotted @border-color;
+
+        th {
+            padding-right: 10px;
+            width: 170px;
+            color: @black-light;
+        }
+
+        td {
+        }
+
+        .archives-img {
+            .wh-width-height(240,180);
+            .mr-margin-right(40);
+        }
+
+        .move-btn {
+            .pa-position-absolute;
+            top: 0px;
+            right: 0px;
+        }
+    }
+
+    .describe {
+        .pr-padding-right(75);
+        .h-height(72);
+        .oh-overflow-hidden;
+    }
+
+
+    .userlist-table {
+        .w-width;
+
+        th {
+            .tc-text-align-center;
+            font-size: 32px;
+            line-height: 80px;
+            .bb-border-bottom;
+        }
+
+        td {
+            .tc-text-align-center;
+            font-size: 42px;
+            padding: 25px 0;
+        }
+
+        .userlist-img {
+            .wh-width-height(125);
+            border-radius: 50%;
+        }
+    }
+
+    .userlist-content {
+        .pa-position-absolute;
+        top: 90px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        .bs-box-shadow;
+        .bc-background-color;
+        border-radius: 5px;
+        padding: 20px 40px;
+    }
+
+    .return-btn {
+        .di-inline-block;
+        .wh-width-height(50,50,50);
+        border-radius: 50%;
+        border: 2px solid @blue;
+        .tc-text-align-center;
+        font-size: 30px;
+        color: @blue;
+        float: left;
+        margin-right: 15px;
+    }
+
+    .return-box {
+        .l-line-height(50);
+        font-size: 36px;
+    }
+
+
+    .inspect-list {
+        margin-top: 20px;
+
+        li {
+            .tc-text-align-center;
+            width: 33.33%;
+            .fl-float-left;
+            line-height: 70px;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        img {
+            width: 445px;
+            height: 265px;
+        }
+    }
+}

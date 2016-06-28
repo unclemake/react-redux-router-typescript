@@ -1,0 +1,269 @@
+/**
+*  接待中心
+*/
+/*@black-dark: #465468; //暗黑色*/
+/*
+    黑色
+    默认字色
+*/
+/*
+  亮黑色
+  二级字色
+*/
+/*
+  最暗的灰色
+  图标颜色
+*/
+/*
+暗灰色 滚动条颜色
+一级分割线
+*/
+/*
+灰色 淡图标颜色
+二级分割线
+*/
+/*
+亮灰色
+网站背景色
+*/
+/*
+最亮的灰色
+背景色
+*/
+.diagnosis-page {
+  position: relative;
+  height: 100%;
+}
+.diagnosis-page .right-box {
+  position: relative;
+  height: 100%;
+  margin-left: 430px;
+}
+.diagnosis-page .user-table {
+  width: 100%;
+}
+.diagnosis-page .user-table th {
+  padding-right: 10px;
+  text-align: right;
+  color: #8a95a5;
+}
+.diagnosis-page .user-table td {
+  font-size: 24px;
+}
+.diagnosis-page .user-data {
+  position: relative;
+  background-color: white;
+  box-shadow: #c4cad3 0 0 7px;
+  border-radius: 5px;
+  padding: 20px;
+  line-height: 60px;
+  z-index: 1;
+}
+.diagnosis-page .user-data h3 {
+  text-align: center;
+  font-size: 28px;
+}
+.diagnosis-page .user-data .show-more-btn {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #4a90e2;
+  text-align: center;
+  top: 100%;
+  left: 50%;
+  margin-left: -30px;
+  border-radius: 0px 0px 3px 3px;
+}
+.diagnosis-page .user-data .show-more-btn .iconfont {
+  color: white;
+}
+.diagnosis-page .user-content {
+  position: absolute;
+  left: 0px;
+  top: 220px;
+  bottom: 0px;
+  width: 100%;
+  padding: 30px;
+  background-color: white;
+  box-shadow: #c4cad3 0 0 7px;
+  border-radius: 5px;
+}
+.diagnosis-page .user-content table {
+  width: 100%;
+}
+.diagnosis-page .user-content table td,
+.diagnosis-page .user-content table th {
+  padding: 20px;
+}
+.diagnosis-page .user-content table th {
+  font-size: 24px;
+  color: #8a95a5;
+  width: 120px;
+  vertical-align: top;
+  padding-right: 0px;
+}
+.diagnosis-page .user-content table .text {
+  width: 100%;
+}
+.diagnosis-page .user-content table .textarea {
+  width: 100%;
+  height: 290px;
+}
+.diagnosis-page .patient-box .patient-content {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 90px;
+  bottom: 340px;
+}
+.diagnosis-page .patient-box .patient-content .center-box {
+  position: relative;
+  top: 50%;
+  margin-top: 262.5px;
+}
+.diagnosis-page .patient-box .title {
+  margin-top: 15px;
+  font-size: 40px;
+  line-height: 40px;
+}
+.diagnosis-page .patient-box .name {
+  margin-top: 20px;
+  font-size: 64px;
+  text-align: center;
+}
+.diagnosis-page .patient-box .phote {
+  text-align: center;
+}
+.diagnosis-page .patient-box .phote img {
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+}
+.diagnosis-page .patient-box .fun {
+  font-size: 40px;
+  line-height: 70px;
+  margin-top: 55px;
+}
+.diagnosis-page .patient-box .fun .grid-12 {
+  padding: 0 20px;
+}
+.diagnosis-page .patient-box .bo-l {
+  border-right: 1px solid #c4cad3;
+}
+.diagnosis-page .patient-box .patient-msg {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  border-top: 1px solid #c4cad3;
+  height: 340px;
+  text-align: center;
+  font-size: 48px;
+}
+.diagnosis-page .patient-box .patient-msg .grid-12 {
+  padding-top: 50px;
+  line-height: 120px;
+  height: 100%;
+}
+.diagnosis-page .patient-box .patient-msg .f64 {
+  font-size: 64px;
+}
+.diagnosis-page .archives-box {
+  position: absolute;
+  top: 220px;
+  bottom: 0px;
+  width: 100%;
+  padding: 45px;
+  box-shadow: #c4cad3 0 0 7px;
+  border-radius: 5px;
+  background-color: white;
+}
+.diagnosis-page .archives-table {
+  width: 100%;
+  font-size: 32px;
+  line-height: 72px;
+  border-bottom: 1px dotted #c4cad3;
+}
+.diagnosis-page .archives-table th {
+  padding-right: 10px;
+  width: 170px;
+  color: #8a95a5;
+}
+.diagnosis-page .archives-table .archives-img {
+  width: 240px;
+  height: 180px;
+  margin-right: 40px;
+}
+.diagnosis-page .archives-table .move-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.diagnosis-page .describe {
+  padding-right: 75px;
+  height: 72px;
+  overflow: hidden;
+}
+.diagnosis-page .userlist-table {
+  width: 100%;
+}
+.diagnosis-page .userlist-table th {
+  text-align: center;
+  font-size: 32px;
+  line-height: 80px;
+  border-bottom: 1px solid #c4cad3;
+}
+.diagnosis-page .userlist-table td {
+  text-align: center;
+  font-size: 42px;
+  padding: 25px 0;
+}
+.diagnosis-page .userlist-table .userlist-img {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+}
+.diagnosis-page .userlist-content {
+  position: absolute;
+  top: 90px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  box-shadow: #c4cad3 0 0 7px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px 40px;
+}
+.diagnosis-page .return-btn {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  border: 2px solid #4a90e2;
+  text-align: center;
+  font-size: 30px;
+  color: #4a90e2;
+  float: left;
+  margin-right: 15px;
+}
+.diagnosis-page .return-box {
+  line-height: 50px;
+  font-size: 36px;
+}
+.diagnosis-page .inspect-list {
+  margin-top: 20px;
+}
+.diagnosis-page .inspect-list li {
+  text-align: center;
+  width: 33.33%;
+  float: left;
+  line-height: 70px;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+.diagnosis-page .inspect-list img {
+  width: 445px;
+  height: 265px;
+}

@@ -6,7 +6,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import * as action from '../action';
-import {State} from '../model';
+import {State, OrderUser, ChatRecord} from '../model';
 import Order from './order';
 import ChatView from './chatView';
 import ChatUser from './chatUser';
