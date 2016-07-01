@@ -1,5 +1,6 @@
 ﻿@import "qikexiu/index";
 @import "_sidebar";
+@import "_layer";
 
 
 body {
@@ -151,6 +152,7 @@ main {
     .wh-width-height(26);
     .bo-border;
     .bc-background-color;
+    .cp-cursor-pointer;
 
     &.selected:before {
         content: ' ';
@@ -164,19 +166,22 @@ main {
     }
 }
 
-.checkbox-move {
+.switchbox {
     .pr-position-relative;
     .di-inline-block;
     .bo-border;
     .bc-background-color;
     border-radius: 16px;
     .hl-heigth-line-h(32);
-
+    width: 170px;
+    .cp-cursor-pointer;
 
     .span {
+        width: 50%;
         position: relative;
-        padding-left: 18px;
-        padding-right: 18px;
+        float: left;
+        display: block;
+        .tc-text-align-center;
     }
 
 
@@ -212,5 +217,25 @@ main {
         & .span:nth-of-type(2) {
             color: @white;
         }
+    }
+}
+
+
+
+/**分页*/
+.paging {
+    .tc-text-align-center;
+
+    & > span {
+        display: inline-block;
+        .vm-vertical-align-middle;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .text {
+        width: 50px;
+        .tc-text-align-center;
+        padding: 0;
     }
 }

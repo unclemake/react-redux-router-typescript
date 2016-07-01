@@ -31,7 +31,8 @@
 背景色
 */
 .orderadmin-page .seach-box {
-  margin: 0 260px;
+  width: 50%;
+  margin: 0 auto;
 }
 .orderadmin-page .orderadmin-content,
 .orderadmin-page .orderadmin-content-all {

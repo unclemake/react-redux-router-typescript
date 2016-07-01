@@ -22,7 +22,7 @@ class Main extends React.Component {
 }
 class AppRouter extends React.Component {
     render() {
-        return React.createElement(react_router_1.Router, {history: react_router_1.hashHistory}, React.createElement(react_router_1.Redirect, {from: "/", to: "message"}), React.createElement(react_router_1.Route, {path: "/message", getComponents: async('../message/index')}), React.createElement(react_router_1.Route, {path: "/reception", getComponents: async('../reception/index')}));
+        return React.createElement(react_router_1.Router, {history: react_router_1.hashHistory}, React.createElement(react_router_1.Redirect, {from: "/", to: "message"}), React.createElement(react_router_1.Route, {path: "/message", getComponents: async('../message/index')}), React.createElement(react_router_1.Route, {path: "/msgset", getComponents: async('../msgset/index')}), React.createElement(react_router_1.Route, {path: "/reception", getComponents: async('../reception/index')}), React.createElement(react_router_1.Route, {path: "/orderadmin", getComponents: async('../orderadmin/index')}), React.createElement(react_router_1.Route, {path: "/patientadmin", getComponents: async('../patientadmin/index')}), React.createElement(react_router_1.Route, {path: "/archivesadmin", getComponents: async('../archivesadmin/index')}), React.createElement(react_router_1.Route, {path: "/websiteadmin", getComponents: async('../websiteadmin/index')}), React.createElement(react_router_1.Route, {path: "/paymenset", getComponents: async('../paymenset/index')}));
     }
 }
 Object.defineProperty(exports, "__esModule", { value: true });

@@ -1,0 +1,110 @@
+﻿/**
+*  接待中心
+*/
+@import "../../components/global/styles/qikexiu/_quick";
+
+.websiteadmin-page {
+    .pr-position-relative;
+    .h-height;
+
+    nav {
+        .wh-width-height(840,55);
+        .ma-center-block;
+        .bc-background-color;
+        border-radius: 4px;
+        .oh-overflow-hidden;
+
+        a {
+            float: left;
+            width: 20%;
+            height: 55px;
+            line-height: 55px;
+            .tc-text-align-center;
+            .br-border-right;
+
+            &:last-of-type {
+                border-right: none;
+            }
+
+            &.selected {
+                background-color: @blue;
+                color: white;
+            }
+        }
+    }
+
+    .left-box {
+        .pr-position-relative;
+        .fl-float-left;
+        width: 910px;
+        .h-height;
+    }
+
+    .right-box {
+        .pr-position-relative;
+        margin-left: 950px;
+        .h-height;
+    }
+
+
+    .left-box-content {
+        .pa-position-absolute;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        top: 45px;
+        .bc-background-color;
+        .bs-box-shadow;
+        border-radius: 5px;
+        padding: 20px 40px;
+    }
+
+    .websiteadmin-content {
+        .pa-position-absolute;
+        top: 60px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+    }
+
+    .add-box {
+        line-height: 45px;
+    }
+
+
+    .department-list {
+        li {
+            line-height: 65px;
+            border-bottom: 1px dashed @border-color;
+        }
+    }
+
+    .upload-btn {
+        .wh-width-height(120,120,120);
+        .db-display-block;
+        .bo-border;
+        background-color: @gray-light;
+        .tc-text-align-center;
+        font-size: 40px;
+    }
+
+    .table-add {
+        .w-width;
+
+        .text, .textarea {
+            .w-width;
+        }
+
+        .textarea {
+            height: 140px;
+        }
+
+        th, td {
+            padding: 12px 0;
+        }
+
+        th {
+            width: 120px;
+        }
+    }
+}

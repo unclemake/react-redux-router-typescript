@@ -1,0 +1,123 @@
+/**
+*  接待中心
+*/
+/*@black-dark: #465468; //暗黑色*/
+/*
+    黑色
+    默认字色
+*/
+/*
+  亮黑色
+  二级字色
+*/
+/*
+  最暗的灰色
+  图标颜色
+*/
+/*
+暗灰色 滚动条颜色
+一级分割线
+*/
+/*
+灰色 淡图标颜色
+二级分割线
+*/
+/*
+亮灰色
+网站背景色
+*/
+/*
+最亮的灰色
+背景色
+*/
+.websiteadmin-page {
+  position: relative;
+  height: 100%;
+}
+.websiteadmin-page nav {
+  width: 840px;
+  height: 55px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.websiteadmin-page nav a {
+  float: left;
+  width: 20%;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  border-right: 1px solid #c4cad3;
+}
+.websiteadmin-page nav a:last-of-type {
+  border-right: none;
+}
+.websiteadmin-page nav a.selected {
+  background-color: #4a90e2;
+  color: white;
+}
+.websiteadmin-page .left-box {
+  position: relative;
+  float: left;
+  width: 910px;
+  height: 100%;
+}
+.websiteadmin-page .right-box {
+  position: relative;
+  margin-left: 950px;
+  height: 100%;
+}
+.websiteadmin-page .left-box-content {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  top: 45px;
+  background-color: white;
+  box-shadow: #c4cad3 0 0 7px;
+  border-radius: 5px;
+  padding: 20px 40px;
+}
+.websiteadmin-page .websiteadmin-content {
+  position: absolute;
+  top: 60px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.websiteadmin-page .add-box {
+  line-height: 45px;
+}
+.websiteadmin-page .department-list li {
+  line-height: 65px;
+  border-bottom: 1px dashed #c4cad3;
+}
+.websiteadmin-page .upload-btn {
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  display: block;
+  border: 1px solid #c4cad3;
+  background-color: #eff1f3;
+  text-align: center;
+  font-size: 40px;
+}
+.websiteadmin-page .table-add {
+  width: 100%;
+}
+.websiteadmin-page .table-add .text,
+.websiteadmin-page .table-add .textarea {
+  width: 100%;
+}
+.websiteadmin-page .table-add .textarea {
+  height: 140px;
+}
+.websiteadmin-page .table-add th,
+.websiteadmin-page .table-add td {
+  padding: 12px 0;
+}
+.websiteadmin-page .table-add th {
+  width: 120px;
+}

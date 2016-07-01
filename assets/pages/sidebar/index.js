@@ -15,7 +15,7 @@ class Component extends React.Component {
             {
                 name: '短信设置',
                 icon: 'book',
-                url: '/orderadmin'
+                url: '/msgset'
             },
             {
                 name: '信息推送',
@@ -25,34 +25,34 @@ class Component extends React.Component {
             {
                 name: '预约管理',
                 icon: 'book',
-                url: '/'
+                url: '/orderadmin'
             },
             {
                 name: '患者管理',
                 icon: 'book',
-                url: '/'
+                url: '/patientadmin'
             },
             {
                 name: '档案管理',
                 icon: 'book',
-                url: '/'
+                url: '/archivesadmin'
             },
             {
                 name: '网站维护',
                 icon: 'book',
-                url: '/'
+                url: '/websiteadmin'
             },
             {
                 name: '支付管理',
                 icon: 'book',
-                url: '/'
+                url: '/paymenset'
             }
         ];
     }
     render() {
         let pathname = this.props.location.pathname;
         return React.createElement("section", {className: "page-sidebar"}, React.createElement("header", null, React.createElement("img", {src: "components/global/image/head.png"}), React.createElement("p", {className: "name"}, "Di Xu"), React.createElement("p", {className: "mt20"}, "设置", React.createElement("span", {className: "line"}), "退出")), React.createElement("nav", null, this.navList.map((value, index) => {
-            return React.createElement(react_router_1.Link, {className: pathname == value.url ? 'selected' : '', to: value.url}, React.createElement("i", {className: "iconfont icon-" + value.icon}), React.createElement("span", {className: "fl"}, value.name), value.number && React.createElement("span", {className: "tag"}, value.number));
+            return React.createElement(react_router_1.Link, {key: index, className: pathname == value.url ? 'selected' : '', to: value.url}, React.createElement("i", {className: "iconfont icon-" + value.icon}), React.createElement("span", {className: "fl"}, value.name), value.number && React.createElement("span", {className: "tag"}, value.number));
         })), React.createElement("footer", null, React.createElement("a", null, "中文"), React.createElement("span", {className: "line"}), React.createElement("a", null, "English")));
     }
 }

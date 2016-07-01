@@ -22,7 +22,11 @@ class App extends React.Component {
     renderOneView() {
         let { messageLabelList } = this.props.state;
         return React.createElement("section", {className: "message-content-box"}, React.createElement("div", {className: "message-content-box-c"}, React.createElement("div", {className: "message-content-title"}, React.createElement("span", {className: "fl"}, "筛选："), React.createElement("ul", {className: "filter-list"}, messageLabelList.map((value, index) => {
-            return React.createElement("li", {key: index}, React.createElement("a", {className: "btn " + (value.selected ? 'btn-blue' : '')}, value.name));
+            return React.createElement("li", {key: index}, React.createElement("a", {onClick: () => {
+                this.dispatch(action.update_label_selected({
+                    id: value.id, selected: !value.selected
+                }));
+            }, className: "btn " + (value.selected ? 'btn-blue' : '')}, value.name));
         })), React.createElement("section", {className: "seach-box"}, React.createElement("input", {type: "text", placeholder: "输入标签名"}), React.createElement("a", {className: "iconfont icon-seach seach-btn"}), React.createElement("div", {className: "number"}, "分组标签  3/10"))), React.createElement("div", {className: "content"}, messageLabelList.map((value, index) => {
             if (value.selected) {
                 return React.createElement("dl", {className: "message-material-list", key: index}, React.createElement("dt", null, value.name, "  ", React.createElement("span", {className: "iconfont icon-bottom"})), this.renderMessageMaterial(value.id));
@@ -33,14 +37,77 @@ class App extends React.Component {
         let { messageMaterialList } = this.props.state;
         let data = messageMaterialList.filter(value => value.labelId == id);
         return data.map((value, index) => {
-            return React.createElement("dd", {key: index, className: value.selected ? 'selected' : ''}, React.createElement("div", {className: "title"}, React.createElement(index_1.Radio, {checked: value.selected, showCheckbox: true}, value.title)), React.createElement("p", {className: "txt"}, value.content), React.createElement("a", {className: "iconfont icon-seach seach-btn"}));
+            return React.createElement("dd", {key: index, className: value.selected ? 'selected' : ''}, React.createElement("div", {className: "title"}, React.createElement(index_1.Radio, {checked: value.selected, onChange: (checked) => {
+                this.dispatch(action.update_materia_selected({
+                    id: value.id,
+                    selected: checked
+                }));
+            }}, value.title)), React.createElement("p", {className: "txt"}, value.content), React.createElement("a", {className: "iconfont icon-seach seach-btn"}));
         });
     }
     /**
      * 第二页开始
      */
     renderTwoView() {
-        return React.createElement("div", null, React.createElement("div", {className: "message-content cf"}, React.createElement("section", {className: "message-box-left"}, React.createElement("section", {className: "seach-box"}, React.createElement("input", {type: "text", placeholder: "输入标签名"}), React.createElement("a", {className: "iconfont icon-seach seach-btn"})), React.createElement("div", {className: "lable-cont"}, "分组标签  3/10"), React.createElement("section", {className: "group-box mt15"}, React.createElement("dl", {className: "group-list"}, React.createElement("dt", null, React.createElement(index_1.Checkbox, {showCheckbox: true}, "全部群组")), React.createElement("dd", null, React.createElement(index_1.Checkbox, {showCheckbox: true}, React.createElement("span", {className: "txt"}, "国际门诊"), "(25) "))))), React.createElement("section", {className: "message-box-right"}, React.createElement("section", {className: "user-list"}, React.createElement("dl", {className: "pt15"}, React.createElement("dt", null, React.createElement(index_1.Checkbox, {showCheckbox: true}, "上海交大教授", React.createElement("span", {className: "number"}, "10/16"))), React.createElement("dd", null, React.createElement("dl", null, React.createElement("dt", null, React.createElement(index_1.Checkbox, {showCheckbox: true}, "上海交大教授", React.createElement("span", {className: "number"}, "10/16"))), React.createElement("dd", null, React.createElement("ul", null, React.createElement("li", null, React.createElement(index_1.Checkbox, {className: "check-img"}, React.createElement("img", {className: "head", src: "../components/global/image/head.png"}), React.createElement("span", {className: "arrow"}), React.createElement("span", {className: "iconfont  icon-hook"}))), React.createElement("li", null, React.createElement(index_1.Checkbox, {className: "check-img", checked: true}, React.createElement("img", {className: "head", src: "../components/global/image/head.png"}), React.createElement("span", {className: "arrow"}), React.createElement("span", {className: "iconfont  icon-hook"}))))))))))), React.createElement("section", {className: "send-box cf"}, React.createElement("div", {className: "grid-12 tr pr40"}, React.createElement("a", {className: "return-btn", onClick: () => { this.dispatch(action.updateState(0)); }}, React.createElement("span", {className: "iconfont icon-left"}))), React.createElement("div", {className: "grid-12 pl40"}, React.createElement(index_1.Checkbox, {className: "mr10 vm"}), React.createElement("span", {className: "vm mr10 iconimg icon-mail"}), React.createElement("span", {className: "vm "}, "同事发送短信"), React.createElement("a", {className: "btn btn-big vm send-btn ml20", onClick: this.sendMessage.bind(this)}, "发送"))));
+        let cont = 0;
+        let contSelected = 0;
+        let state = this.props.state;
+        let userTypeGroupList = state.userGroupList[state.indexGroup];
+        userTypeGroupList.list.forEach((value, index) => {
+            cont += value.userList.length;
+            value.userList.forEach((value, index) => {
+                value.selected && contSelected++;
+            });
+        });
+        return React.createElement("div", null, React.createElement("div", {className: "message-content cf"}, React.createElement("section", {className: "message-box-left"}, React.createElement("section", {className: "seach-box"}, React.createElement("input", {type: "text", placeholder: "输入标签名"}), React.createElement("a", {className: "iconfont icon-seach seach-btn"})), React.createElement("div", {className: "lable-cont"}, "分组标签  3/10"), React.createElement("section", {className: "group-box mt15"}, React.createElement("dl", {className: "group-list"}, React.createElement("dt", null, React.createElement(index_1.Checkbox, {onChange: (checked) => {
+            this.selectedAll(checked);
+        }, checked: this.props.state.userGroupList.every(value => value.selected), className: "fuck"}, "全部群组")), this.props.state.userGroupList.map((value, index) => {
+            return React.createElement("dd", {className: "cp", key: index}, React.createElement(index_1.Checkbox, {checked: value.selected, onChange: (checked) => {
+                this.dispatch(action.update_group_selected({
+                    id: value.id,
+                    selected: checked
+                }));
+            }}), React.createElement("span", {className: "txt"}, value.name), "(", value.total, ")");
+        })))), React.createElement("section", {className: "message-box-right"}, React.createElement("section", {className: "user-list"}, React.createElement("dl", {className: "pt15"}, React.createElement("dt", null, React.createElement(index_1.Checkbox, {onChange: (checked) => {
+            this.dispatch(action.update_group_selected({
+                id: userTypeGroupList.id,
+                selected: checked
+            }));
+        }, checked: cont == contSelected}, "全部", React.createElement("span", {className: "number"}, contSelected, "/", cont))), userTypeGroupList.list.map((value, index) => {
+            let cont = value.userList.length;
+            let contSelect = value.userList.filter(value => value.selected == true).length;
+            let groupValue = value;
+            return React.createElement("dd", {key: index}, React.createElement("dl", null, React.createElement("dt", null, React.createElement(index_1.Checkbox, {checked: cont == contSelect, onChange: (checked) => {
+                value.userList.forEach((value, index) => {
+                    this.dispatch(action.update_user_selected({
+                        groupId: groupValue.id,
+                        id: value.id,
+                        selected: checked
+                    }));
+                });
+            }}, value.name, React.createElement("span", {className: "number"}, contSelect, "/", cont))), React.createElement("dd", null, React.createElement("ul", null, value.userList.map((value, index) => {
+                return React.createElement("li", {key: index}, React.createElement(index_1.Checkbox, {onChange: (checked) => {
+                    this.dispatch(action.update_user_selected({
+                        groupId: groupValue.id,
+                        id: value.id,
+                        selected: checked
+                    }));
+                }, showCheckbox: false, className: "check-img", checked: value.selected}, React.createElement("img", {className: "head", src: value.url}), React.createElement("span", {className: "arrow"}), React.createElement("span", {className: "iconfont  icon-hook"})));
+            })))));
+        }))))), React.createElement("section", {className: "send-box cf"}, React.createElement("div", {className: "grid-12 tr pr40"}, React.createElement("a", {className: "return-btn", onClick: () => { this.dispatch(action.updateState(0)); }}, React.createElement("span", {className: "iconfont icon-left"}))), React.createElement("div", {className: "grid-12 pl40"}, React.createElement(index_1.Checkbox, {className: "mr10 vm"}), React.createElement("span", {className: "vm mr10 iconimg icon-mail"}), React.createElement("span", {className: "vm "}, "同事发送短信"), React.createElement("a", {className: "btn btn-big vm send-btn ml20", onClick: this.sendMessage.bind(this)}, "发送"))));
+    }
+    /**
+     * 选中所有群组
+     * @param checked 状态
+     */
+    selectedAll(checked) {
+        let state = this.props.state;
+        state.userGroupList.forEach(value => {
+            this.dispatch(action.update_group_selected({
+                id: value.id,
+                selected: checked
+            }));
+        });
     }
     /**
      * 发送短信

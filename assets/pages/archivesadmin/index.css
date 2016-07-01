@@ -1,0 +1,56 @@
+/**
+*  接待中心
+*/
+/*@black-dark: #465468; //暗黑色*/
+/*
+    黑色
+    默认字色
+*/
+/*
+  亮黑色
+  二级字色
+*/
+/*
+  最暗的灰色
+  图标颜色
+*/
+/*
+暗灰色 滚动条颜色
+一级分割线
+*/
+/*
+灰色 淡图标颜色
+二级分割线
+*/
+/*
+亮灰色
+网站背景色
+*/
+/*
+最亮的灰色
+背景色
+*/
+.orderadmin-page .seach-box {
+  margin: 0 260px;
+}
+.orderadmin-page .orderadmin-content,
+.orderadmin-page .orderadmin-content-all {
+  position: absolute;
+  width: 100%;
+  top: 70px;
+  bottom: 0px;
+  left: 0px;
+  background-color: white;
+  box-shadow: #c4cad3 0 0 7px;
+  border-radius: 5px;
+  padding: 55px 30px;
+}
+.orderadmin-page .orderadmin-content.orderadmin-content-all,
+.orderadmin-page .orderadmin-content-all.orderadmin-content-all {
+  top: 0px;
+}
+.orderadmin-page .phote {
+  width: 240px;
+  height: 180px;
+  margin-right: 40px;
+}

@@ -19,7 +19,7 @@ export const updateState = createAction<number>(
  * 修改标签selected
  */
 export const UPDATE_LABEL_SELECTED = 'UPDATE_LABEL_SELECTED';
-export const update_label_selected = createAction<{ id: number, selected: string }>(
+export const update_label_selected = createAction<{ id: number, selected: boolean }>(
     UPDATE_LABEL_SELECTED,
     (args) => args
 );
@@ -28,7 +28,7 @@ export const update_label_selected = createAction<{ id: number, selected: string
  * 修改素材selected
  */
 export const UPDATE_MATERIA_SELECTED = 'UPDATE_MATERIA_SELECTED';
-export const update_materia_selected = createAction<{ id: number, selected: string }>(
+export const update_materia_selected = createAction<{ id: number, selected: boolean }>(
     UPDATE_MATERIA_SELECTED,
     (args) => args
 );
@@ -37,8 +37,8 @@ export const update_materia_selected = createAction<{ id: number, selected: stri
  * 修改用户组selected
  */
 export const UPDATE_GROUP_SELECTED = 'UPDATE_GROUP_SELECTED';
-export const update_group_selected = createAction<{ id: number, selected: string }>(
-    UPDATE_MATERIA_SELECTED,
+export const update_group_selected = createAction<{ id: number, selected: boolean }>(
+    UPDATE_GROUP_SELECTED,
     (args) => args
 );
 
@@ -46,8 +46,8 @@ export const update_group_selected = createAction<{ id: number, selected: string
  * 修改用户selected
  */
 export const UPDATE_USER_SELECTED = 'UPDATE_USER_SELECTED';
-export const update_user_selected = createAction<{ id: number, selected: string }>(
-    UPDATE_MATERIA_SELECTED,
+export const update_user_selected = createAction<{ groupId: number, id: number, selected: boolean }>(
+    UPDATE_USER_SELECTED,
     (args) => args
 );
 

@@ -21,7 +21,7 @@ export default class Component extends React.Component<ReactRouter.RouteComponen
         {
             name: '短信设置',
             icon: 'book',
-            url: '/orderadmin'
+            url: '/msgset'
         },
         {
             name: '信息推送',
@@ -31,27 +31,27 @@ export default class Component extends React.Component<ReactRouter.RouteComponen
         {
             name: '预约管理',
             icon: 'book',
-            url: '/'
+            url: '/orderadmin'
         },
         {
             name: '患者管理',
             icon: 'book',
-            url: '/'
+            url: '/patientadmin'
         },
         {
             name: '档案管理',
             icon: 'book',
-            url: '/'
+            url: '/archivesadmin'
         },
         {
             name: '网站维护',
             icon: 'book',
-            url: '/'
+            url: '/websiteadmin'
         },
         {
             name: '支付管理',
             icon: 'book',
-            url: '/'
+            url: '/paymenset'
         }
     ]
 
@@ -68,7 +68,7 @@ export default class Component extends React.Component<ReactRouter.RouteComponen
             <nav>
                 {
                     this.navList.map((value, index) => {
-                        return <Link className={pathname == value.url ? 'selected' : ''} to={ value.url}>
+                        return <Link key={index} className={pathname == value.url ? 'selected' : ''} to={ value.url}>
                             <i className={"iconfont icon-" + value.icon}></i>
                             <span className="fl">
                                 {value.name}

@@ -20,7 +20,7 @@ export interface State {
     userGroupList: UserGroup[]
 
     //当前分组
-    userTypeGroupList: UserTypeGroup[]
+    indexGroup: number
 }
 
 
@@ -52,7 +52,8 @@ export interface UserGroup {
     id: number,
     name: string,
     selected: boolean,
-    total: number
+    total: number,
+    list?: UserTypeGroup[]
 }
 
 /**
@@ -61,7 +62,7 @@ export interface UserGroup {
 export interface UserTypeGroup {
     id: number,
     name: string,
-    selected: boolean
+    selected: boolean,
     userList: MessageUser[]
 }
 

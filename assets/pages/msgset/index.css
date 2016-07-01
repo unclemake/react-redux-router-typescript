@@ -56,6 +56,10 @@
   padding: 18px;
   border: 1px solid #c4cad3;
 }
+.msgset-page .set-list .checkbox {
+  float: left;
+  margin: 8px 5px 0 0;
+}
 .msgset-page .msgset-content {
   position: absolute;
   top: 60px;

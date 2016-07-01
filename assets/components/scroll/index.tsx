@@ -1,5 +1,5 @@
-/**
- * ¹ö¶¯Ìõ
+ï»¿/**
+ * æ»šåŠ¨æ¡
  */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -113,8 +113,8 @@ export default React.createClass({
         if (pos > 0.6 && pos > this.lastPos && this.props.onApproachingBottom) {
             this.props.onApproachingBottom();
         }
-        if (this.props.onScrolling) {
-            this.props.onScrolling(pos, e.target.scrollTop);
+        if (this.props.onScroll) {
+            this.props.onScroll(pos, e.target.scrollTop);
         }
         this.lastPos = pos;
     },

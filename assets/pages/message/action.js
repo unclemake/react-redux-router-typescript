@@ -23,10 +23,10 @@ exports.update_materia_selected = redux_actions_1.createAction(exports.UPDATE_MA
  * 修改用户组selected
  */
 exports.UPDATE_GROUP_SELECTED = 'UPDATE_GROUP_SELECTED';
-exports.update_group_selected = redux_actions_1.createAction(exports.UPDATE_MATERIA_SELECTED, (args) => args);
+exports.update_group_selected = redux_actions_1.createAction(exports.UPDATE_GROUP_SELECTED, (args) => args);
 /**
  * 修改用户selected
  */
 exports.UPDATE_USER_SELECTED = 'UPDATE_USER_SELECTED';
-exports.update_user_selected = redux_actions_1.createAction(exports.UPDATE_MATERIA_SELECTED, (args) => args);
+exports.update_user_selected = redux_actions_1.createAction(exports.UPDATE_USER_SELECTED, (args) => args);
 })

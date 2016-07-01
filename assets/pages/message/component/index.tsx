@@ -43,7 +43,11 @@ export class App extends React.Component<AppProps, any> {
                         {
                             messageLabelList.map((value, index) => {
                                 return <li key={index}>
-                                    <a className={"btn " + (value.selected ? 'btn-blue' : '') }>{value.name}</a>
+                                    <a onClick={() => {
+                                        this.dispatch(action.update_label_selected({
+                                            id: value.id, selected: !value.selected
+                                        }));
+                                    } } className={"btn " + (value.selected ? 'btn-blue' : '') }>{value.name}</a>
                                 </li>
                             })
                         }
@@ -81,7 +85,12 @@ export class App extends React.Component<AppProps, any> {
         return data.map((value, index) => {
             return <dd key={index} className={value.selected ? 'selected' : ''}>
                 <div className="title">
-                    <Radio checked={value.selected} showCheckbox={true}>
+                    <Radio checked={value.selected} onChange={(checked) => {
+                        this.dispatch(action.update_materia_selected({
+                            id: value.id,
+                            selected: checked
+                        }));
+                    } } >
                         {value.title}
                     </Radio>
                 </div>
@@ -94,10 +103,23 @@ export class App extends React.Component<AppProps, any> {
     }
 
 
+
+
     /**
      * 第二页开始
      */
     renderTwoView() {
+        let cont = 0;
+        let contSelected = 0;
+        let state = this.props.state;
+        let userTypeGroupList = state.userGroupList[state.indexGroup];
+        userTypeGroupList.list.forEach((value, index) => {
+            cont += value.userList.length;
+            value.userList.forEach((value, index) => {
+                value.selected && contSelected++;
+            });
+        });
+
         return <div>
             <div className="message-content cf">
                 <section className="message-box-left">
@@ -110,11 +132,26 @@ export class App extends React.Component<AppProps, any> {
                     <section className="group-box mt15">
                         <dl className="group-list">
                             <dt>
-                                <Checkbox showCheckbox={true}>
+                                <Checkbox onChange={
+                                    (checked) => {
+                                        this.selectedAll(checked);
+                                    }
+                                } checked={this.props.state.userGroupList.every(value => value.selected) } className="fuck">
                                     全部群组
                                 </Checkbox>
                             </dt>
-                            <dd><Checkbox showCheckbox={true}><span className="txt">国际门诊</span>(25) </Checkbox></dd>
+                            {
+                                this.props.state.userGroupList.map((value, index) => {
+                                    return <dd className="cp" key={index}>
+                                        <Checkbox checked={value.selected} onChange={ (checked) => {
+                                            this.dispatch(action.update_group_selected({
+                                                id: value.id,
+                                                selected: checked
+                                            }))
+                                        } } ></Checkbox><span className="txt">{value.name}</span>({value.total})
+                                    </dd>;
+                                })
+                            }
                         </dl>
                     </section>
                 </section>
@@ -122,39 +159,62 @@ export class App extends React.Component<AppProps, any> {
                     <section className="user-list">
                         <dl className="pt15">
                             <dt>
-                                <Checkbox showCheckbox={true}>
-                                    上海交大教授
-                                    <span className="number">10/16</span>
+                                <Checkbox onChange={ (checked) => {
+                                    this.dispatch(action.update_group_selected({
+                                        id: userTypeGroupList.id,
+                                        selected: checked
+                                    }))
+                                } } checked={cont == contSelected }>
+                                    全部
+                                    <span className="number">{contSelected}/{cont}</span>
                                 </Checkbox>
                             </dt>
-                            <dd>
-                                <dl>
-                                    <dt>
-                                        <Checkbox showCheckbox={true}>
-                                            上海交大教授
-                                            <span className="number">10/16</span>
-                                        </Checkbox>
-                                    </dt>
-                                    <dd>
-                                        <ul>
-                                            <li>
-                                                <Checkbox className="check-img">
-                                                    <img className="head" src="../components/global/image/head.png" />
-                                                    <span className="arrow"></span>
-                                                    <span className="iconfont  icon-hook"></span>
+                            {
+                                userTypeGroupList.list.map((value, index) => {
+                                    let cont = value.userList.length;
+                                    let contSelect = value.userList.filter(value => value.selected == true).length;
+                                    let groupValue = value;
+                                    return <dd key={index}>
+                                        <dl>
+                                            <dt>
+                                                <Checkbox checked={cont == contSelect } onChange={(checked) => {
+                                                    value.userList.forEach((value, index) => {
+                                                        this.dispatch(action.update_user_selected({
+                                                            groupId: groupValue.id,
+                                                            id: value.id,
+                                                            selected: checked
+                                                        }));
+                                                    })
+                                                } }>
+                                                    {value.name}
+                                                    <span className="number">{contSelect}/{cont}</span>
                                                 </Checkbox>
-                                            </li>
-                                            <li>
-                                                <Checkbox className="check-img" checked={true}>
-                                                    <img className="head" src="../components/global/image/head.png" />
-                                                    <span className="arrow"></span>
-                                                    <span className="iconfont  icon-hook"></span>
-                                                </Checkbox>
-                                            </li>
-                                        </ul>
-                                    </dd>
-                                </dl>
-                            </dd>
+                                            </dt>
+                                            <dd>
+                                                <ul>
+                                                    {
+                                                        value.userList.map((value, index) => {
+                                                            return <li key={index}>
+                                                                <Checkbox onChange={(checked) => {
+                                                                    this.dispatch(action.update_user_selected({
+                                                                        groupId: groupValue.id,
+                                                                        id: value.id,
+                                                                        selected: checked
+                                                                    }));
+                                                                } } showCheckbox={false} className="check-img" checked={value.selected}>
+                                                                    <img className="head" src={value.url} />
+                                                                    <span className="arrow"></span>
+                                                                    <span className="iconfont  icon-hook"></span>
+                                                                </Checkbox>
+                                                            </li>;
+                                                        })
+                                                    }
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </dd>;
+                                })
+                            }
                         </dl>
                     </section>
                 </section>
@@ -174,8 +234,23 @@ export class App extends React.Component<AppProps, any> {
                     </a>
                 </div>
             </section>
-        </div>
+        </div >
     }
+
+    /**
+     * 选中所有群组
+     * @param checked 状态
+     */
+    selectedAll(checked: boolean) {
+        let state = this.props.state;
+        state.userGroupList.forEach(value => {
+            this.dispatch(action.update_group_selected({
+                id: value.id,
+                selected: checked
+            }))
+        })
+    }
+
 
     /**
      * 发送短信

@@ -6,7 +6,6 @@ import * as React from 'react';
 import { State, OrderUser, ChatUserRecord, ChatUser, ChatList, ChatRecord, User} from '../model';
 import Scroll from '../../../components/scroll/index';
 
-
 export default class Component extends React.Component<{
     chatList: ChatList[]
 }, void> {

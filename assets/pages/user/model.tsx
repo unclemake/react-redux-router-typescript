@@ -7,10 +7,14 @@
 //用户数据
 export interface User {
     id?: number,
+    //头像地址
+    url?: string,
     //姓名
     name?: string,
-    //头像
-    url?: string
+    //证件类型
+    IDType?: string,
+    //证件号码
+    ID?: string
 }
 
 

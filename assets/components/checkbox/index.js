@@ -4,35 +4,33 @@ const React = require('react');
 class Checkbox extends React.Component {
     constructor(...args) {
         super(...args);
-        this.state = {
-            checked: this.props.checked
-        };
         this.className = 'checkbox';
     }
     click() {
-        this.change(!this.state.checked);
+        this.change(!this.props.checked);
     }
     change(checked) {
-        this.state.checked = checked;
-        this.setState(this.state);
-        this.props.onChange && this.props.onChange(this.state.checked);
+        this.props.onChange && this.props.onChange(checked);
+    }
+    getClassName() {
+        let className = this.className + ' ';
+        className += this.props.checked ? ' selected ' : '';
+        className += !this.props.children && this.props.className ? this.props.className : '';
+        return className;
     }
     /**
      * 渲染基础 checkbox 如果仅仅渲染基础 需要继承 className
      * @param only
      */
-    renderCheckbox(only = true) {
-        let className = this.className + ' ';
-        className += this.state.checked ? ' selected ' : '';
-        className += only && this.props.className ? this.props.className : '';
-        return React.createElement("div", {className: className, onClick: only && this.click.bind(this)});
+    renderCheckbox() {
+        return React.createElement("div", {className: this.getClassName(), onClick: !this.props.children && this.click.bind(this)});
     }
     /**
    * 渲染有子级的checkbox
    * @param only
    */
     renderTextCheckbox() {
-        return React.createElement("div", {className: 'cp ' + (this.props.className && this.props.className) + (this.state.checked ? ' selected' : ''), onClick: this.click.bind(this)}, this.props.showCheckbox && this.renderCheckbox(false), this.props.children);
+        return React.createElement("div", {className: 'cp ' + (this.props.className && this.props.className) + (this.props.checked ? ' selected' : ''), onClick: this.click.bind(this)}, (this.props.showCheckbox === undefined || !!this.props.showCheckbox) && this.renderCheckbox(), this.props.children);
     }
     render() {
         return this.props.children ? this.renderTextCheckbox() : this.renderCheckbox();
@@ -46,11 +44,11 @@ class Radio extends Checkbox {
         this.className = 'radio';
     }
     click() {
-        if (!this.state.checked) {
+        if (!this.props.checked) {
             radioList[this.props.name].forEach((fun) => {
                 fun();
             });
-            this.change(!this.state.checked);
+            this.change(!this.props.checked);
         }
     }
     componentDidMount() {
@@ -67,4 +65,18 @@ class Radio extends Checkbox {
     }
 }
 exports.Radio = Radio;
+class SwitchBox extends Checkbox {
+    constructor(...args) {
+        super(...args);
+        this.className = 'switchbox';
+    }
+    /**
+   * 渲染基础 checkbox 如果仅仅渲染基础 需要继承 className
+   * @param only
+   */
+    renderCheckbox() {
+        return React.createElement("div", {width: this.props.width, className: this.getClassName(), onClick: !this.props.children && this.click.bind(this)}, React.createElement("span", {className: "span"}, this.props.closeText || '关'), React.createElement("span", {className: "span"}, this.props.openText || '开'));
+    }
+}
+exports.SwitchBox = SwitchBox;
 })
