@@ -24,13 +24,13 @@ var FreeScrollbarHandlerStyles = {
 };
 
 var FreeScrollbarScrollerStyles = {
-    overflowY: "auto",
+    overflowY: "scroll",
     height: "100%",
     position: "absolute",
     top: "0px",
     left: "0px",
     bottom: "0px",
-    right: "-20px",
+    right: "-22px",
     paddingRight: "0px"
 };
 

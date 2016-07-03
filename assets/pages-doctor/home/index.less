@@ -1,0 +1,99 @@
+﻿/**
+*  接待中心
+*/
+@import "../../components/global/styles/qikexiu/_quick";
+
+
+.home-page {
+
+    .right-box {
+        .pr-position-relative;
+        .h-height;
+        margin-left: 430px;
+    }
+
+      .user-table {
+        width: 100%;
+
+        th {
+            padding-right: 10px;
+            text-align: right;
+            color: @black-light;
+        }
+
+        td {
+            font-size: 24px;
+        }
+    }
+
+    .user-data {
+        .pr-position-relative;
+        .bc-background-color;
+        .bs-box-shadow;
+        border-radius: 5px;
+        padding: 20px;
+        line-height: 60px;
+        z-index: 1;
+
+        h3 {
+            .tc-text-align-center;
+            font-size: 28px;
+        }
+
+        .show-more-btn {
+            .pa-position-absolute;
+            .wh-width-height(60,30);
+            .hl-heigth-line-h(30);
+            .bc-background-color(@blue);
+            .tc-text-align-center;
+            top: 100%;
+            left: 50%;
+            margin-left: -30px;
+            border-radius: 0px 0px 3px 3px;
+
+            .iconfont {
+                color: white;
+            }
+        }
+    }
+
+
+    .user-content {
+        .pa-position-absolute;
+        left: 0px;
+        top: 220px;
+        bottom: 0px;
+        .w-width;
+        padding: 30px;
+        .bc-background-color;
+        .bs-box-shadow;
+        border-radius: 5px;
+
+        table {
+            .w-width;
+
+
+            td, th {
+                padding: 20px;
+            }
+
+            th {
+                font-size: 24px;
+                color: @black-light;
+                width: 120px;
+                vertical-align: top;
+                padding-right: 0px;
+            }
+
+
+            .text {
+                .w-width;
+            }
+
+            .textarea {
+                .w-width;
+                .h-height(290);
+            }
+        }
+    }
+}

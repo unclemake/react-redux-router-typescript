@@ -13,7 +13,8 @@
             'redux-actions': "node_modules/redux-actions/lib/index.js",
             'redux-thunk': "node_modules/redux-thunk/lib/index.js",
             'lodash': "node_modules/lodash/lodash.js",
-            'reduce-reducers': "node_modules/reduce-reducers/lib/index.js"
+            'reduce-reducers': "node_modules/reduce-reducers/lib/index.js",
+            'react-custom-scrollbars': 'node_modules/react-custom-scrollbars/dist/react-custom-scrollbars.min.js'
         }
     });
 }());

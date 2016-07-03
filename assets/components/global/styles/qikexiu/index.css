@@ -679,7 +679,7 @@ optgroup {
   /* iOS 4.1- */
 }
 .iconfont {
-  font-family: iconfont !important;
+  font-family: iconfont, 'Microsoft YaHei';
   font-style: normal;
   color: #acb2ba;
   /*-webkit-font-smoothing: antialiased;

@@ -1,0 +1,105 @@
+/**
+*  接待中心
+*/
+/*@black-dark: #465468; //暗黑色*/
+/*
+    黑色
+    默认字色
+*/
+/*
+  亮黑色
+  二级字色
+*/
+/*
+  最暗的灰色
+  图标颜色
+*/
+/*
+暗灰色 滚动条颜色
+一级分割线
+*/
+/*
+灰色 淡图标颜色
+二级分割线
+*/
+/*
+亮灰色
+网站背景色
+*/
+/*
+最亮的灰色
+背景色
+*/
+.archives-page {
+  height: 100%;
+}
+.archives-page .user-data {
+  position: relative;
+  background-color: white;
+  box-shadow: #c4cad3 0 0 7px;
+  border-radius: 5px;
+  padding: 20px;
+  line-height: 60px;
+  z-index: 1;
+}
+.archives-page .user-data h3 {
+  text-align: center;
+  font-size: 28px;
+}
+.archives-page .user-data .show-more-btn {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #4a90e2;
+  text-align: center;
+  top: 100%;
+  left: 50%;
+  margin-left: -30px;
+  border-radius: 0px 0px 3px 3px;
+}
+.archives-page .user-data .show-more-btn .iconfont {
+  color: white;
+}
+.archives-page .user-table {
+  width: 100%;
+}
+.archives-page .user-table th {
+  padding-right: 10px;
+  text-align: right;
+  color: #8a95a5;
+}
+.archives-page .user-table td {
+  font-size: 24px;
+}
+.archives-page .archives-box {
+  position: absolute;
+  top: 220px;
+  bottom: 0px;
+  width: 100%;
+  padding: 45px;
+  box-shadow: #c4cad3 0 0 7px;
+  border-radius: 5px;
+  background-color: white;
+}
+.archives-page .archives-table {
+  width: 100%;
+  font-size: 32px;
+  line-height: 72px;
+  border-bottom: 1px dotted #c4cad3;
+}
+.archives-page .archives-table th {
+  padding-right: 10px;
+  width: 170px;
+  color: #8a95a5;
+}
+.archives-page .archives-table .archives-img {
+  width: 240px;
+  height: 180px;
+  margin-right: 40px;
+}
+.archives-page .archives-table .move-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}

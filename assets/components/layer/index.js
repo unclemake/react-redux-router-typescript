@@ -134,19 +134,11 @@ class Page extends MsgComponent {
     render() {
         if (this.props.show) {
             exports.mask();
-            setTimeout(() => {
-                this.calculateStyle();
-            }, 1);
         }
         else {
             exports.mask(false);
         }
-        return (React.createElement("section", {style: {
-            marginLeft: this.state.mleft,
-            marginTop: this.state.mtop,
-            top: this.state.top,
-            left: this.state.left,
-        }, className: "layer-page " + (this.props.show ? 'show' : ''), ref: "layer"}, React.createElement("a", {className: "close-btn", onClick: this.props.onHide}, React.createElement("i", {className: "iconfont icon-left"})), React.createElement("section", {className: "layer-page-content"}, this.props.children)));
+        return (React.createElement("section", {className: "layer-page dt " + (this.props.show ? 'show' : ''), ref: "layer"}, React.createElement("div", {className: "dc"}, React.createElement("a", {className: "close-btn", onClick: this.props.onHide}, React.createElement("i", {className: "iconfont icon-left"})), React.createElement("section", {className: "layer-page-content"}, this.props.children))));
     }
 }
 exports.Page = Page;

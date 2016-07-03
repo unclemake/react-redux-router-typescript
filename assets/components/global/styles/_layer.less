@@ -127,19 +127,25 @@
 
 .layer-page {
     position: fixed;
-    left: 50%;
-    top: 50%;
-    background-color: white;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     z-index: 101;
     .tr-transition(~'opacity 0.5s,left 0.5s');
-    padding: 26px;
-    .bs-box-shadow();
-    border-radius: 5px;
     .dn-display-none;
 
 
-    &.selected {
-        .db-display-block;
+    .layer-page-content {
+        display: inline-block;
+        .bc-background-color;
+        padding: 15px 30px;
+        .bs-box-shadow();
+        border-radius: 5px;
+    }
+
+    &.show {
+        display: table;
     }
 
 

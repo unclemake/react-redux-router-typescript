@@ -1,0 +1,108 @@
+/**
+*  接待中心
+*/
+/*@black-dark: #465468; //暗黑色*/
+/*
+    黑色
+    默认字色
+*/
+/*
+  亮黑色
+  二级字色
+*/
+/*
+  最暗的灰色
+  图标颜色
+*/
+/*
+暗灰色 滚动条颜色
+一级分割线
+*/
+/*
+灰色 淡图标颜色
+二级分割线
+*/
+/*
+亮灰色
+网站背景色
+*/
+/*
+最亮的灰色
+背景色
+*/
+.home-page .right-box {
+  position: relative;
+  height: 100%;
+  margin-left: 430px;
+}
+.home-page .user-table {
+  width: 100%;
+}
+.home-page .user-table th {
+  padding-right: 10px;
+  text-align: right;
+  color: #8a95a5;
+}
+.home-page .user-table td {
+  font-size: 24px;
+}
+.home-page .user-data {
+  position: relative;
+  background-color: white;
+  box-shadow: #c4cad3 0 0 7px;
+  border-radius: 5px;
+  padding: 20px;
+  line-height: 60px;
+  z-index: 1;
+}
+.home-page .user-data h3 {
+  text-align: center;
+  font-size: 28px;
+}
+.home-page .user-data .show-more-btn {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #4a90e2;
+  text-align: center;
+  top: 100%;
+  left: 50%;
+  margin-left: -30px;
+  border-radius: 0px 0px 3px 3px;
+}
+.home-page .user-data .show-more-btn .iconfont {
+  color: white;
+}
+.home-page .user-content {
+  position: absolute;
+  left: 0px;
+  top: 220px;
+  bottom: 0px;
+  width: 100%;
+  padding: 30px;
+  background-color: white;
+  box-shadow: #c4cad3 0 0 7px;
+  border-radius: 5px;
+}
+.home-page .user-content table {
+  width: 100%;
+}
+.home-page .user-content table td,
+.home-page .user-content table th {
+  padding: 20px;
+}
+.home-page .user-content table th {
+  font-size: 24px;
+  color: #8a95a5;
+  width: 120px;
+  vertical-align: top;
+  padding-right: 0px;
+}
+.home-page .user-content table .text {
+  width: 100%;
+}
+.home-page .user-content table .textarea {
+  width: 100%;
+  height: 290px;
+}

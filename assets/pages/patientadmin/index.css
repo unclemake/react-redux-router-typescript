@@ -52,12 +52,20 @@
   padding-right: 40px;
 }
 .patientadmin-page .left-box-content {
+  position: relative;
   width: 100%;
   height: 100%;
   background-color: white;
   border-radius: 5px;
   box-shadow: #c4cad3 0 0 7px;
   padding: 30px;
+}
+.patientadmin-page .left-box-content-scroll {
+  position: absolute;
+  top: 32px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
 .patientadmin-page .right-box {
   width: 65%;

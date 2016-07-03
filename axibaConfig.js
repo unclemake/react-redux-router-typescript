@@ -18,9 +18,9 @@ module.exports = {
                    "node_modules/redux/dist/redux.js",
                    "node_modules/react-redux/dist/react-redux.js",
                    "node_modules/react-dom/dist/react-dom.min.js",
-                   "node_modules/react-router/umd/ReactRouter.min.js",
+                   "node_modules/react-router/umd/ReactRouter.js",
                    "node_modules/lodash/lodash.js",
-
+                   "node_modules/react-custom-scrollbars/dist/react-custom-scrollbars.min.js",
                    'redux-thunk',
                    'reduce-reducers',
                    'flux-standard-action',
@@ -34,6 +34,6 @@ module.exports = {
         'redux': 'node_modules/redux/dist/redux.min.js',
         'react-redux': "node_modules/react-redux/dist/react-redux.min.js",
         'react-dom': "node_modules/react-dom/dist/react-dom.min.js",
-        'react-router': "node_modules/react-router/umd/ReactRouter.min.js"
+        'react-router': "node_modules/react-router/umd/ReactRouter.js"
     }
 }

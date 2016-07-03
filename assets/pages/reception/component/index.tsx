@@ -30,9 +30,10 @@ export class App extends React.Component<AppProps, void> {
     render() {
         const { state, dispatch } = this.props;
         return <section className="h100">
-            <Order list={state.orderList} updataOrder={(args: OrderUser) => dispatch(action.updateOrder(args)) }/>
-
-            <section className="chat-box module">
+            <section  className="fr h100">
+                <Order list={state.orderList} updataOrder={(args: OrderUser) => dispatch(action.updateOrder(args)) }/>
+            </section>
+            <section className="chat-box  module">
                 <header>
                     <span className="fl">
                         咨询患者

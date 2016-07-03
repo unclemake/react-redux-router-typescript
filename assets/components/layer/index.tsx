@@ -186,26 +186,21 @@ export class Page extends MsgComponent<pageProps> {
     }
 
     render() {
+
         if (this.props.show) {
             mask();
-            setTimeout(() => {
-                this.calculateStyle();
-            }, 1);
         } else {
             mask(false);
         }
 
         return (
-            <section  style={{
-                marginLeft: this.state.mleft,
-                marginTop: this.state.mtop,
-                top: this.state.top,
-                left: this.state.left,
-            }} className={"layer-page " + (this.props.show ? 'show' : '') } ref = "layer" >
-                <a className="close-btn" onClick={this.props.onHide }><i className="iconfont icon-left"></i></a>
-                <section className="layer-page-content">
-                    {this.props.children}
-                </section>
+            <section className={"layer-page dt " + (this.props.show ? 'show' : '') } ref = "layer" >
+                <div className="dc">
+                    <a className="close-btn" onClick={this.props.onHide }><i className="iconfont icon-left"></i></a>
+                    <section className="layer-page-content">
+                        {this.props.children}
+                    </section>
+                </div>
             </section>
         );
     }

@@ -87,8 +87,22 @@
   left: 0px;
   right: 0px;
 }
+.websiteadmin-page .websiteadmin-content2 {
+  position: absolute;
+  top: 172px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  border-radius: 6px;
+  box-shadow: #c4cad3 0 0 7px;
+  background-color: white;
+  padding: 30px;
+}
 .websiteadmin-page .add-box {
   line-height: 45px;
+}
+.websiteadmin-page .add-box .tx {
+  margin: 0 150px;
 }
 .websiteadmin-page .department-list li {
   line-height: 65px;
@@ -120,4 +134,9 @@
 }
 .websiteadmin-page .table-add th {
   width: 120px;
+}
+.websiteadmin-page .seach-box {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }

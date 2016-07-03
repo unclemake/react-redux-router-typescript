@@ -1,0 +1,92 @@
+/**
+*  接待中心
+*/
+/*@black-dark: #465468; //暗黑色*/
+/*
+    黑色
+    默认字色
+*/
+/*
+  亮黑色
+  二级字色
+*/
+/*
+  最暗的灰色
+  图标颜色
+*/
+/*
+暗灰色 滚动条颜色
+一级分割线
+*/
+/*
+灰色 淡图标颜色
+二级分割线
+*/
+/*
+亮灰色
+网站背景色
+*/
+/*
+最亮的灰色
+背景色
+*/
+.home-page .patient-content {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 90px;
+  bottom: 340px;
+}
+.home-page .patient-content .center-box {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -262.5px;
+}
+.home-page .title {
+  margin-top: 15px;
+  font-size: 40px;
+  line-height: 40px;
+}
+.home-page .name {
+  margin-top: 20px;
+  font-size: 64px;
+  text-align: center;
+}
+.home-page .phote {
+  text-align: center;
+}
+.home-page .phote img {
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+}
+.home-page .fun {
+  font-size: 40px;
+  line-height: 70px;
+  margin-top: 55px;
+}
+.home-page .fun .grid-12 {
+  padding: 0 20px;
+}
+.home-page .bo-l {
+  border-right: 1px solid #c4cad3;
+}
+.home-page .patient-msg {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  border-top: 1px solid #c4cad3;
+  height: 340px;
+  text-align: center;
+  font-size: 48px;
+}
+.home-page .patient-msg .grid-12 {
+  padding-top: 50px;
+  line-height: 120px;
+  height: 100%;
+}
+.home-page .patient-msg .f64 {
+  font-size: 64px;
+}

@@ -1,0 +1,13 @@
+define(function(require, exports, module) {"use strict";
+/// <reference path="../../index.d.ts" />
+const React = require('react');
+require('./index.css');
+require('../../pages/reception/index.css');
+class Component extends React.Component {
+    render() {
+        return React.createElement("section", {className: "home-page pr h100"}, React.createElement("section", {className: "order-box module fl"}, React.createElement("h2", null, "已预约患者"), React.createElement("section", {className: "seach"}, React.createElement("input", {type: "text", placeholder: "输入姓名／证件号／微信号"}), React.createElement("a", {className: "iconfont icon-book seach-btn"})), React.createElement("section", {className: "list"}, React.createElement("p", {className: "count"}, "已搜索到 108 位预约患者"), React.createElement("ul", null, React.createElement("li", null, React.createElement("img", {className: "head", src: "../../components/global/image/head.png"}), React.createElement("div", {className: "fl"}, React.createElement("p", {className: "name"}, "王清雅"), React.createElement("p", null, "候诊中")), React.createElement("a", {className: "btn"}, "候诊"))))), React.createElement("section", {className: "right-box"}, React.createElement("section", {className: "user-data"}, React.createElement("h3", null, "健康档案"), React.createElement("table", {className: "user-table"}, React.createElement("tr", null, React.createElement("th", null, "姓名"), React.createElement("td", null, "John"), React.createElement("th", null, "性别"), React.createElement("td", null, "男"), React.createElement("th", null, "性别"), React.createElement("td", null, "41岁"), React.createElement("th", null, "国籍"), React.createElement("td", null, "美国"), React.createElement("th", null, "婚育情况"), React.createElement("td", null, "已婚已育"), React.createElement("th", null, "血型"), React.createElement("td", null, "AB"))), React.createElement("a", {className: "show-more-btn"}, React.createElement("i", {className: "iconfont icon-bag"}))), React.createElement("section", {className: "user-content"}, React.createElement("table", null, React.createElement("tr", null, React.createElement("th", null, "疾病名称"), React.createElement("td", null, React.createElement("input", {className: "text"}))), React.createElement("tr", null, React.createElement("th", null, "病情描述"), React.createElement("td", null, React.createElement("textarea", {className: "textarea"})))), React.createElement("div", {className: "tc"}, React.createElement("a", {className: "btn btn-huge mt40"}, "提交（就诊结束）")))));
+    }
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Component;
+})

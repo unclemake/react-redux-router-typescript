@@ -45,8 +45,10 @@ export class Checkbox<T extends CheckboxProps> extends React.Component<T, any> {
    * @param only
    */
     renderTextCheckbox() {
-        return <div className={'cp ' + (this.props.className && this.props.className) + (this.props.checked ? ' selected' : '') } onClick={this.click.bind(this) } >
-            {(this.props.showCheckbox === undefined || !!this.props.showCheckbox) && this.renderCheckbox() }
+        return <div className={'cp di ' + (this.props.className ? this.props.className : '') + (this.props.checked ? ' selected' : '') } onClick={this.click.bind(this) } >
+            <span className="mr5">
+                {(this.props.showCheckbox === undefined || !!this.props.showCheckbox) && this.renderCheckbox() }
+            </span>
             {this.props.children}
         </div>;
     }

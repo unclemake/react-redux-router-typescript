@@ -650,7 +650,7 @@ optgroup {
   /* iOS 4.1- */
 }
 .iconfont {
-  font-family: iconfont !important;
+  font-family: iconfont, 'Microsoft YaHei';
   font-style: normal;
   color: #acb2ba;
   /*-webkit-font-smoothing: antialiased;
@@ -1350,20 +1350,25 @@ a.btn-disabled:hover,
 }
 .layer-page {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  background-color: white;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   z-index: 101;
   transition: opacity 0.5s,left 0.5s;
   -webkit-transition: opacity 0.5s,left 0.5s;
   /* Safari 和 Chrome */
-  padding: 26px;
-  box-shadow: #c4cad3 0 0 7px;
-  border-radius: 5px;
   display: none;
 }
-.layer-page.selected {
-  display: block;
+.layer-page .layer-page-content {
+  display: inline-block;
+  background-color: white;
+  padding: 15px 30px;
+  box-shadow: #c4cad3 0 0 7px;
+  border-radius: 5px;
+}
+.layer-page.show {
+  display: table;
 }
 .layer-page .close-btn {
   width: 50px;
@@ -1380,108 +1385,6 @@ a.btn-disabled:hover,
   color: black;
   text-align: center;
   font-size: 40px;
-}
-body {
-  min-width: 1880px;
-}
-#app {
-  height: 100%;
-}
-main {
-  position: relative;
-  height: 100%;
-  overflow: auto;
-  padding: 40px;
-  margin-left: 300px;
-}
-main .main-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-main.main-big {
-  margin-left: 140px;
-}
-.module {
-  background-color: #ffffff;
-  box-shadow: #acb2ba 0px 0px 10px;
-  border-radius: 5px;
-}
-/*搜索box*/
-.seach-box {
-  position: relative;
-  height: 48px;
-  line-height: 48px;
-  padding-right: 70px;
-  padding-left: 24px;
-  border: 1px solid #c4cad3;
-  border-radius: 24px;
-  overflow: hidden;
-  background-color: white;
-}
-.seach-box input {
-  width: 100%;
-  height: 48px;
-  line-height: 48px;
-  border: none;
-  font-size: 24px;
-}
-.seach-box .seach-btn {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  width: 70px;
-  text-align: center;
-  font-size: 40px;
-  cursor: pointer;
-}
-.seach-box .number {
-  color: #8a95a5;
-}
-.main-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.main-content-bg {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: #c4cad3 0 0 7px;
-}
-/*表格*/
-.table {
-  width: 100%;
-  line-height: 30px;
-}
-.table th,
-.table td {
-  padding-left: 30px;
-  vertical-align: middle;
-}
-.table th {
-  height: 46px;
-  background-color: #eff1f3;
-}
-.table td {
-  padding: 20px;
-  padding-left: 30px;
-}
-.table-vertical {
-  width: 100%;
-  line-height: 60px;
-}
-.table-vertical th,
-.table-vertical td {
-  padding-left: 60px;
-  vertical-align: middle;
-}
-.table-vertical th {
-  width: 210px;
-  color: #8a95a5;
 }
 .radio {
   position: relative;
@@ -1565,6 +1468,116 @@ main.main-big {
 }
 .switchbox.selected:before .span:nth-of-type(2) {
   color: #ffffff;
+}
+body {
+  min-width: 1880px;
+}
+#app {
+  height: 100%;
+}
+main {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  padding: 40px;
+  margin-left: 300px;
+}
+main .main-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+main.main-big {
+  margin-left: 140px;
+}
+.module {
+  background-color: #ffffff;
+  box-shadow: #acb2ba 0px 0px 10px;
+  border-radius: 5px;
+}
+/*搜索box*/
+.seach-box {
+  position: relative;
+  height: 48px;
+  line-height: 48px;
+  padding-right: 70px;
+  padding-left: 24px;
+  border: 1px solid #c4cad3;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: white;
+}
+.seach-box input {
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  border: none;
+  font-size: 24px;
+  text-indent: 70px;
+  text-align: center;
+}
+.seach-box .seach-btn {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 70px;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+.seach-box .number {
+  color: #8a95a5;
+}
+.main-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.main-content-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: #c4cad3 0 0 7px;
+}
+/*表格*/
+.table {
+  width: 100%;
+  line-height: 30px;
+  background-color: white;
+}
+.table th,
+.table td {
+  padding-left: 30px;
+  vertical-align: middle;
+}
+.table th {
+  height: 46px;
+  background-color: #eff1f3;
+}
+.table td {
+  padding: 20px;
+  padding-left: 30px;
+}
+.table .head {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.table-vertical {
+  width: 100%;
+  line-height: 60px;
+}
+.table-vertical th,
+.table-vertical td {
+  padding-left: 60px;
+  vertical-align: middle;
+}
+.table-vertical th {
+  width: 210px;
+  color: #8a95a5;
 }
 /**分页*/
 .paging {

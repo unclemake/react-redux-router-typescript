@@ -1,0 +1,12 @@
+define(function(require, exports, module) {"use strict";
+/// <reference path="../../index.d.ts" />
+const React = require('react');
+require('./index.css');
+class Component extends React.Component {
+    render() {
+        return React.createElement("section", {className: "archives-page pr"}, React.createElement("section", {className: "user-data"}, React.createElement("h3", null, "健康档案"), React.createElement("table", {className: "user-table"}, React.createElement("tr", null, React.createElement("th", null, "姓名"), React.createElement("td", null, "John"), React.createElement("th", null, "性别"), React.createElement("td", null, "男"), React.createElement("th", null, "性别"), React.createElement("td", null, "41岁"), React.createElement("th", null, "国籍"), React.createElement("td", null, "美国"), React.createElement("th", null, "婚育情况"), React.createElement("td", null, "已婚已育"), React.createElement("th", null, "血型"), React.createElement("td", null, "AB"))), React.createElement("a", {className: "show-more-btn"}, React.createElement("i", {className: "iconfont icon-bag"}))), React.createElement("section", {className: "archives-box"}, React.createElement("table", {className: "archives-table"}, React.createElement("tr", null, React.createElement("th", null, "就诊记录："), React.createElement("td", null, "2016-04-30"), React.createElement("th", null, "主治医生："), React.createElement("td", null, "宋晓敏"), React.createElement("th", null, "填写人："), React.createElement("td", null, "包强")), React.createElement("tr", null, React.createElement("th", null, "疾病名称："), React.createElement("td", {colSpan: "5"}, "慢性肾小球肾炎")), React.createElement("tr", null, React.createElement("th", null, "病情描述："), React.createElement("td", {colSpan: "5", className: "pr"}, React.createElement("div", {className: "describe"}, "尿检红细胞满视野，蛋白三个＋，肾小球肾炎穿刺手术，尿检红细胞满视野，蛋白三个＋，肾小球肾" + ' ' + "尿检红细胞满视野，蛋白三个＋，肾小球肾炎穿刺手术，尿检红细胞满视野，蛋白三个＋，肾小球肾"), React.createElement("i", {className: "iconfont icon-bag move-btn"}))), React.createElement("tr", null, React.createElement("th", {colSpan: "6"}, "检查报告：")), React.createElement("tr", null, React.createElement("td", {colSpan: "6"}, React.createElement("img", {className: "archives-img", src: "../../components/global/image/head.png"}), React.createElement("img", {className: "archives-img", src: "../../components/global/image/head.png"}), React.createElement("img", {className: "archives-img", src: "../../components/global/image/head.png"}))))));
+    }
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Component;
+})

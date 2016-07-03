@@ -5,51 +5,79 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import Scroll from '../../components/scroll/index';
 import {Page} from '../../components/layer/index';
 import * as util from '../../components/util/index';
 import {Radio, Checkbox} from '../../components/checkbox/index';
-
+import { Scrollbars } from 'react-custom-scrollbars';
 import './index.css';
 
 //渲染
-export default class App extends React.Component<void, void> {
+export default class App extends React.Component<any, any> {
+    state = {
+        pageShow: false
+    }
+
+    addPageShow(bl: boolean) {
+
+        this.state.pageShow = bl;
+        this.setState(this.state);
+    }
+
+
     render() {
         return <section className="patientadmin-page">
-            <a className="add-box">+新增医院介绍</a>
+            <a className="add-box" onClick={this.addPageShow.bind(this, true) }>+新增医院介绍</a>
             <section className="seach-box"><input type="text" className="tc" placeholder="输入标签名" /><a className="iconfont icon-seach seach-btn"></a><div className="number">分组标签&nbsp; 3/10</div></section>
             <section className="patientadmin-cont">
                 <section className="left-box">
                     <section className="left-box-content">
                         <h3>群组</h3>
-                        <table className="table-left">
-                            <tbody>
-                                <tr>
-                                    <th>国际门诊</th>
-                                    <td>10</td>
-                                    <td><a className="blue">修改群组名</a></td>
-                                    <td><a className="blue">解除群组</a></td>
-                                </tr>
-                                <tr>
-                                    <th>上海交大</th>
-                                    <td>10</td>
-                                    <td><a className="blue">修改群组名</a></td>
-                                    <td><a className="blue">解除群组</a></td>
-                                </tr>
-                                <tr>
-                                    <th>国际门诊</th>
-                                    <td>10</td>
-                                    <td><a className="blue">修改群组名</a></td>
-                                    <td><a className="blue">解除群组</a></td>
-                                </tr>
-                                <tr>
-                                    <th>国际门诊</th>
-                                    <td>10</td>
-                                    <td><a className="blue">修改群组名</a></td>
-                                    <td><a className="blue">解除群组</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <section className="left-box-content-scroll">
+                            <Scrollbars  >
+                                <div className="p30">
+                                    <table className="table-left">
+                                        <tbody>
+                                            <tr>
+                                                <th>国际门诊</th>
+                                                <td>10</td>
+                                                <td><a className="blue">修改群组名</a></td>
+                                                <td><a className="blue">解除群组</a></td>
+                                            </tr><tr>
+                                                <th>国际门诊</th>
+                                                <td>10</td>
+                                                <td><a className="blue">修改群组名</a></td>
+                                                <td><a className="blue">解除群组</a></td>
+                                            </tr><tr>
+                                                <th>国际门诊</th>
+                                                <td>10</td>
+                                                <td><a className="blue">修改群组名</a></td>
+                                                <td><a className="blue">解除群组</a></td>
+                                            </tr><tr>
+                                                <th>国际门诊</th>
+                                                <td>10</td>
+                                                <td><a className="blue">修改群组名</a></td>
+                                                <td><a className="blue">解除群组</a></td>
+                                            </tr><tr>
+                                                <th>国际门诊</th>
+                                                <td>10</td>
+                                                <td><a className="blue">修改群组名</a></td>
+                                                <td><a className="blue">解除群组</a></td>
+                                            </tr><tr>
+                                                <th>国际门诊</th>
+                                                <td>10</td>
+                                                <td><a className="blue">修改群组名</a></td>
+                                                <td><a className="blue">解除群组</a></td>
+                                            </tr><tr>
+                                                <th>国际门诊</th>
+                                                <td>10</td>
+                                                <td><a className="blue">修改群组名</a></td>
+                                                <td><a className="blue">解除群组</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </Scrollbars>
+                        </section>
                     </section>
                 </section>
                 <section className="right-box">
@@ -68,7 +96,7 @@ export default class App extends React.Component<void, void> {
                     </table>
                 </section>
             </section>
-            <Page>
+            <Page show={this.state.pageShow}>
                 <h3>新增群组</h3>
                 <div className="group-name-box">
                     群组名<input className="text ml20" type="text" />
@@ -102,7 +130,7 @@ export default class App extends React.Component<void, void> {
                 </section>
                 <div className="tc mt40">
                     <a className="btn btn-huge">保存</a>
-                    <a className="btn btn-huge btn-gray-bo ml40">取消</a>
+                    <a className="btn btn-huge btn-gray-bo ml40"  onClick={this.addPageShow.bind(this, false) }>取消</a>
                 </div>
             </Page>
         </section>

@@ -5,7 +5,6 @@ import { Router, Route, IndexRoute, Link, IndexLink, Redirect, hashHistory } fro
 
 
 import Sidebar from '../sidebar/index';
-import Reception from '../reception/index';
 
 function async(text) {
     return (location, callback) => {
@@ -44,6 +43,7 @@ export default class AppRouter extends React.Component<void, void> {
             <Route path="/patientadmin" getComponents={ async('../patientadmin/index') } />
             <Route path="/archivesadmin" getComponents={ async('../archivesadmin/index') } />
             <Route path="/websiteadmin" getComponents={ async('../websiteadmin/index') } />
+            <Route path="/websiteadmin/expert" getComponents={ async('../websiteadmin/components/expert') } />
             <Route path="/paymenset" getComponents={ async('../paymenset/index') } />
         </Router>
     }

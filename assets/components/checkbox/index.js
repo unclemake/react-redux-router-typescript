@@ -30,7 +30,7 @@ class Checkbox extends React.Component {
    * @param only
    */
     renderTextCheckbox() {
-        return React.createElement("div", {className: 'cp ' + (this.props.className && this.props.className) + (this.props.checked ? ' selected' : ''), onClick: this.click.bind(this)}, (this.props.showCheckbox === undefined || !!this.props.showCheckbox) && this.renderCheckbox(), this.props.children);
+        return React.createElement("div", {className: 'cp di ' + (this.props.className ? this.props.className : '') + (this.props.checked ? ' selected' : ''), onClick: this.click.bind(this)}, React.createElement("span", {className: "mr5"}, (this.props.showCheckbox === undefined || !!this.props.showCheckbox) && this.renderCheckbox()), this.props.children);
     }
     render() {
         return this.props.children ? this.renderTextCheckbox() : this.renderCheckbox();

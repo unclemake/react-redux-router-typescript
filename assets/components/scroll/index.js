@@ -21,13 +21,13 @@ var FreeScrollbarHandlerStyles = {
     zIndex: "1"
 };
 var FreeScrollbarScrollerStyles = {
-    overflowY: "auto",
+    overflowY: "scroll",
     height: "100%",
     position: "absolute",
     top: "0px",
     left: "0px",
     bottom: "0px",
-    right: "-20px",
+    right: "-22px",
     paddingRight: "0px"
 };
 Object.defineProperty(exports, "__esModule", { value: true });
