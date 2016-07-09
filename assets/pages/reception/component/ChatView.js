@@ -1,5 +1,5 @@
 define(function(require, exports, module) {"use strict";
-/// <reference path="../../index.d.ts" />
+/// <reference path="../../../index.d.ts" />
 /**
  * 聊天窗口
  */

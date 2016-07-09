@@ -1,16 +1,14 @@
-﻿/// <reference path="../index.d.ts" />
+﻿/// <reference path="../../index.d.ts" />
 import * as React from 'react';
+import { Router, Route, IndexRoute, Link, IndexLink, Redirect } from 'react-router';
 
 
+export default class Component extends React.Component<ReactRouter.RouteComponentProps<void, void>, void> {
 
-/**
- * radio
- */
-export default class Main extends React.Component<RadioProps, any> {
     render() {
-        return <span>
-            错了
-        </span>;
+        return <section >
+            404
+        </section>;
     }
 }
 

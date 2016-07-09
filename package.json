@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/unclemake/react-redux-router-typescript#readme",
   "dependencies": {
-    "axiba": "^0.2.1",
+    "axiba": "^0.2.2",
     "flux-standard-action": "^0.6.1",
     "lodash": "^4.13.1",
     "react": "^15.1.0",

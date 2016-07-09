@@ -1,5 +1,5 @@
 define(function(require, exports, module) {"use strict";
-/// <reference path="../../index.d.ts" />
+/// <reference path="../../../index.d.ts" />
 /**
  * 聊天列表
  */
@@ -14,7 +14,7 @@ class Component extends React.Component {
     }
     render() {
         let { chatRecordList } = this.props;
-        return React.createElement("div", {className: "content"}, chatRecordList.map((item, index) => {
+        return React.createElement("div", {className: "content chat-list-box"}, chatRecordList.map((item, index) => {
             if (index > 0) {
                 var prevTime = new Date(chatRecordList[index - 1].time.replace('-', '/'));
                 var indexTime = new Date(chatRecordList[index].time.replace('-', '/'));

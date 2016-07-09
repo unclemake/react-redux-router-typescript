@@ -1,4 +1,4 @@
-﻿/// <reference path="../../index.d.ts" />
+﻿/// <reference path="../../../index.d.ts" />
 /**
  * 聊天列表
  */
@@ -17,7 +17,7 @@ export default class Component extends React.Component<{
 
     render() {
         let {chatRecordList} = this.props;
-        return <div className="content">
+        return <div className="content chat-list-box">
             {
                 chatRecordList.map((item, index) => {
                     if (index > 0) {
