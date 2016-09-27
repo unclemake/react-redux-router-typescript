@@ -1,36 +1,21 @@
 {
-  "name": "react-redux-router-typescript",
-  "version": "1.0.0",
-  "description": "react 应用",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/unclemake/react-redux-router-typescript.git"
-  },
-  "author": "unclemake",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/unclemake/react-redux-router-typescript/issues"
-  },
-  "homepage": "https://github.com/unclemake/react-redux-router-typescript#readme",
-  "dependencies": {
-    "axiba": "^0.2.2",
-    "flux-standard-action": "^0.6.1",
-    "lodash": "^4.13.1",
-    "react": "^15.1.0",
-    "react-custom-scrollbars": "^4.0.0-beta.2",
-    "react-dom": "^15.1.0",
-    "react-redux": "^4.4.5",
-    "react-router": "^2.4.1",
-    "react-router-redux": "^4.0.5",
-    "reduce-reducers": "^0.1.2",
-    "redux": "^3.5.2",
-    "redux-actions": "^0.10.0",
-    "redux-thunk": "^2.1.0",
-    "seajs": "^3.0.2",
-    "seajs-css": "^1.0.5"
-  }
+    "name": "demo",
+    "version": "1.0.0",
+    "description": "web-demo",
+    "main": "index.js",
+    "dependencies": { },
+    "devDependencies": { },
+    "scripts": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unclemake/react-redux-router-typescript.git"
+    },
+    "author": "unclemake",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/unclemake/react-redux-router-typescript/issues"
+    },
+    "homepage": "https://github.com/unclemake/react-redux-router-typescript#readme"
 }
