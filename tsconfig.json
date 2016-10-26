@@ -5,8 +5,10 @@
     "watch": false,
     "noImplicitAny": false,
     "removeComments": false,
-    "noEmitHelpers": true,
     "sourceMap": true,
     "jsx": "react"
-  }
+  },
+  "include": [
+    "node_modules/@types/**/*"
+  ]
 }

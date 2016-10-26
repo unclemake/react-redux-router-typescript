@@ -1,21 +1,32 @@
 {
-    "name": "demo",
-    "version": "1.0.0",
-    "description": "web-demo",
-    "main": "index.js",
-    "dependencies": { },
-    "devDependencies": { },
-    "scripts": {
-        "test": "test"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/unclemake/react-redux-router-typescript.git"
-    },
-    "author": "unclemake",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/unclemake/react-redux-router-typescript/issues"
-    },
-    "homepage": "https://github.com/unclemake/react-redux-router-typescript#readme"
+  "name": "react-redux-router-typescript",
+  "version": "1.0.0",
+  "description": "模版项目",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unclemake/react-redux-router-typescript.git"
+  },
+  "scripts": {
+    "start": "gulp watch",
+    "test": "node test",
+    "cnpm": "npm install --registry=https://registry.npm.taobao.org"
+  },
+  "author": "unclemake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unclemake/react-redux-router-typescript/issues"
+  },
+  "homepage": "https://github.com/unclemake/react-redux-router-typescript#readme",
+  "dependencies": {
+    "@types/react": "^0.14.42",
+    "@types/react-dom": "^0.14.18",
+    "@types/react-router": "^2.0.38",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^3.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
