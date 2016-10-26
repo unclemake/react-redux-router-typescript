@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/my/index.js"],"names":["define","require","exports","module"],"mappings":"AAAAA,OAAA,oBAAA,SAAAC,QAAAC,QAAAC,QAAA","file":"index.js","sourcesContent":["\"use strict\";\nlet a = b => {\n    console.log(1);\n    console.log(1);\n    console.log(1);\n};\n"],"sourceRoot":"assetsBulid"}

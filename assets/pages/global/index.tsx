@@ -16,7 +16,6 @@ function async(text) {
     }
 }
 
-
 class Main extends React.Component<ReactRouter.RouteComponentProps<void, void>, void> {
     render() {
         return <div className="h100">
@@ -34,6 +33,7 @@ export default class AppRouter extends React.Component<void, void> {
         return <Router history={hashHistory}  >
             <Redirect from="/" to="/home" />
             <Route path="/home" getComponents={async('../home/index')} />
+            <Route path="/my" getComponents={async('../my/index')} />
 
             <Route path="*" getComponents={async('../error/index')} />
         </Router>
