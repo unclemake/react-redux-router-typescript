@@ -8,10 +8,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-define("pages/home/index.js", function (require, exports, module) {
+define("components/nav/index.js", function (require, exports, module) {
     "use strict";
 
     var React = require('react');
+    var react_router_1 = require('react-router');
 
     var Component = function (_React$Component) {
         _inherits(Component, _React$Component);
@@ -25,7 +26,7 @@ define("pages/home/index.js", function (require, exports, module) {
         _createClass(Component, [{
             key: "render",
             value: function render() {
-                return React.createElement("section", { className: "page=home" }, "我是首页");
+                return React.createElement("ul", null, React.createElement("li", null, React.createElement(react_router_1.Link, { to: '/home' }, "首页")), React.createElement("li", null, React.createElement(react_router_1.Link, { to: '/my' }, "关于")));
             }
         }]);
 

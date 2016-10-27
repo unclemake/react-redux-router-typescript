@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.js"],"names":["define","require","exports","module"],"mappings":"AAAAA,OAAA,WAAA,SAAAC,QAAAC,QAAAC,QAAA","file":"index.js","sourcesContent":["\"use strict\";\nlet a = b => {\n    console.log(1);\n};\n"]}

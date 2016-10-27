@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link, IndexLink, Redirect, hashHistory } from 'react-router';
-
+import Nav from '../../components/nav/index';
 
 declare let require: any;
 function async(text) {
@@ -19,6 +19,7 @@ function async(text) {
 class Main extends React.Component<ReactRouter.RouteComponentProps<void, void>, void> {
     render() {
         return <div className="h100">
+            <Nav></Nav>
             <main>
                 {this.props.children}
             </main>

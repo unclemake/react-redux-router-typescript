@@ -1,8 +1,10 @@
 import * as React from 'react';
 
-let a = b => {
-    console.log(1);
-    console.log(1);
-    console.log(1);
-}
 
+export default class Component extends React.Component<any, void> {
+    render() {
+        return <section className="page=home">
+            我是内页
+           </section>
+    }
+}
