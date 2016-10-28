@@ -5,13 +5,24 @@ import Nav from '../../components/nav/index';
 
 declare let require: any;
 function async(text) {
-    return (location, callback) => {
-        console.log('加载：' + text);
-        require.async(text, (mod) => {
-            var Com = mod.default;
-            callback(null, (prop) => {
-                return <Main {...prop}><Com /></Main>;
-            })
+    return (obj, callback) => {
+        //自动解析
+        let url = text === "*" ? '..' + obj.location.pathname + '/index' : '../' + text;
+        console.log('加载：' + url);
+        require.async(url, (mod) => {
+            if (mod) {
+                var Com = mod.default;
+                callback(null, (prop) => {
+                    return <Main {...prop}><Com /></Main>;
+                })
+            } else {
+                require.async('../error/index.js', (mod) => {
+                    var Com = mod.default;
+                    callback(null, (prop) => {
+                        return <Main {...prop}><Com /></Main>;
+                    })
+                });
+            }
         })
     }
 }
@@ -32,11 +43,8 @@ export default class AppRouter extends React.Component<void, void> {
 
     render() {
         return <Router history={hashHistory}  >
-            <Redirect from="/" to="/home" />
-            <Route path="/home" getComponents={async('../home/index')} />
-            <Route path="/my" getComponents={async('../my/index')} />
-
-            <Route path="*" getComponents={async('../error/index')} />
+            <Redirect from="/" to="/react" />
+            <Route path="*" getComponents={async('*')} />
         </Router>
     }
 }
