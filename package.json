@@ -8,6 +8,7 @@
     "url": "git+https://github.com/unclemake/react-redux-router-typescript.git"
   },
   "scripts": {
+    "postinstall": "gulp makeEslint",
     "start": "gulp watch",
     "test": "node test",
     "cnpm": "npm install --registry=https://registry.npm.taobao.org"
@@ -19,16 +20,28 @@
   },
   "homepage": "https://github.com/unclemake/react-redux-router-typescript#readme",
   "dependencies": {
-    "@types/react": "^0.14.42",
+    "@types/react": "^0.14.43",
     "@types/react-dom": "^0.14.18",
+    "@types/react-redux": "^4.4.32",
     "@types/react-router": "^2.0.38",
+    "@types/redux": "^3.6.31",
+    "@types/redux-actions": "^0.8.31",
+    "@types/redux-thunk": "^2.1.31",
+    "@types/socket.io": "^1.4.27",
+    "@types/socket.io-client": "^1.4.27",
+    "@types/superagent": "^2.0.35",
+    "antd": "^2.2.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router": "^3.0.0"
+    "react-redux": "^4.4.5",
+    "react-router": "^3.0.0",
+    "redux": "^3.6.0",
+    "redux-actions": "^0.12.0",
+    "redux-thunk": "^2.1.0",
+    "superagent": "^2.3.0"
   },
   "devDependencies": {
-    "axiba": "^0.3.0",
     "gulp": "^3.9.1",
-    "seajs": "^2.3.0"
+    "tslint-config-standard": "^1.5.0"
   }
 }

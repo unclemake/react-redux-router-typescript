@@ -1,13 +1,16 @@
 const gulp = require('gulp');
-const axiba = require('axiba');
+const {compile, run} = require('axiba');
+const config = require('eslint-config-airbnb');
+const fs = require('fs');
 
-let task = axiba.compile;
 
 gulp.task('default', function () {
-    axiba.makeMainFile()
-        .then(() => axiba.bulid()).then(() => {
-            axiba.watch();
-            server();
-
-        })
+    compile.watch();
+    return run();
 });
+
+gulp.task('main', function () {
+    return compile.makeMainFile()
+        .then(() => compile.bulid())
+});
+

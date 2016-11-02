@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { Button, Slider, Select } from 'antd';
-const Option = Select.Option;
+import Button from '../../components/button/index';
+import Select from '../../components/select/index';
 
+const Option = Select.Option;
 export default class Component extends React.Component<any, void> {
     render() {
         return <section className="page=home">
             <h2>我是内页</h2>
             <Button>Hello world!</Button>
-            <Slider defaultValue={30} />
             <Select defaultValue="lucy" style={{ width: 120 }} onChange={handleChange}>
                 <Option value="jack">Jack</Option>
                 <Option value="lucy">Lucy</Option>

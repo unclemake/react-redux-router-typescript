@@ -2,13 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "watch": false,
-    "noImplicitAny": false,
-    "removeComments": false,
-    "sourceMap": true,
-    "jsx": "react"
-  },
-  "include": [
-    "node_modules/@types/**/*"
-  ]
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
+  }
 }
