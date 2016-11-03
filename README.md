@@ -5,8 +5,8 @@
 
 ## 安装
 ```sh
-npm install gulp typescript tslint -g
-npm install
+npm install gulp typescript tslint -g --registry=https://registry.npm.taobao.org
+npm install --registry=https://registry.npm.taobao.org
 ```
 
 ## 安装 vscode 扩展
