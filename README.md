@@ -11,8 +11,11 @@ npm install
 
 ## 安装 vscode 扩展
 TSlint
+
 Document This
+
 Blade Runner
+
 Path Intellisense
 
 ## 启动
