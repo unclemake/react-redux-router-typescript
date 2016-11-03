@@ -25,7 +25,7 @@ define("pages/my/index.js", function (require, exports, module) {
         _createClass(Component, [{
             key: "render",
             value: function render() {
-                return React.createElement("section", { className: "page=home" }, "我是内页");
+                return React.createElement("section", { className: 'page-home' }, "我是内页");
             }
         }]);
 

@@ -26,15 +26,17 @@ define("pages/global/index.js", function (require, exports, module) {
     var index_1 = require('../../components/nav/index');
     function async(text) {
         return function (obj, callback) {
-            //自动解析
-            var url = text === "*" ? '..' + obj.location.pathname + '/index' : '../' + text;
+            // 自动解析
+            var url = text === '*' ? '..' + obj.location.pathname + '/index' : '../' + text;
             console.log('加载：' + url);
             require.async(url, function (mod) {
                 if (mod) {
-                    var Com = mod.default;
-                    callback(null, function (prop) {
-                        return React.createElement(Main, __assign({}, prop), React.createElement(Com, null));
-                    });
+                    (function () {
+                        var Com = mod.default;
+                        callback(null, function (prop) {
+                            return React.createElement(Main, __assign({}, prop), React.createElement(Com, null));
+                        });
+                    })();
                 } else {
                     require.async('../error/index.js', function (mod) {
                         var Com = mod.default;
@@ -59,7 +61,7 @@ define("pages/global/index.js", function (require, exports, module) {
         _createClass(Main, [{
             key: "render",
             value: function render() {
-                return React.createElement("div", { className: "h100" }, React.createElement(index_1.default, null), React.createElement("main", null, this.props.children));
+                return React.createElement("div", { className: 'h100' }, React.createElement(index_1.default, null), React.createElement("main", null, this.props.children));
             }
         }]);
 
@@ -78,7 +80,7 @@ define("pages/global/index.js", function (require, exports, module) {
         _createClass(AppRouter, [{
             key: "render",
             value: function render() {
-                return React.createElement(react_router_1.Router, { history: react_router_1.hashHistory }, React.createElement(react_router_1.Redirect, { from: "/", to: "/react" }), React.createElement(react_router_1.Route, { path: "*", getComponents: async('*') }));
+                return React.createElement(react_router_1.Router, { history: react_router_1.hashHistory }, React.createElement(react_router_1.Redirect, { from: '/', to: '/react' }), React.createElement(react_router_1.Route, { path: '*', getComponents: async('*') }));
             }
         }]);
 

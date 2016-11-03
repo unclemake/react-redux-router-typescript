@@ -1,6 +1,6 @@
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; } ();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -56,19 +56,17 @@ define("pages/redux/component.js", function (require, exports, module) {
                     state = _props.state,
                     dispatch = _props.dispatch;
 
-                return React.createElement("section", { className: "page-redux" }, React.createElement("h2", null, "redux"), React.createElement(index_2.default, { placeholder: "填写", value: this.state.str, onChange: this.change.bind(this) }), React.createElement(index_1.default, {
-                    onClick: function onClick() {
+                return React.createElement("section", { className: 'page-redux' }, React.createElement("h2", null, "redux"), React.createElement(index_2.default, { placeholder: '填写', value: this.state.str, onChange: this.change.bind(this) }), React.createElement(index_1.default, { onClick: function onClick() {
                         return dispatch(action.addStr(_this2.state.str));
-                    }
-                }, "添加"), React.createElement("h3", null, "列表"), React.createElement("ul", null, state.list.map(function (value) {
-                    return React.createElement("li", { key: value }, value);
-                })), React.createElement("h3", null, "样式"), React.createElement("p", { className: "css1" }, "样式"));
+                    } }, "添加"), React.createElement("h3", null, "列表"), React.createElement("ul", null, state.list.map(function (value, index) {
+                    return React.createElement("li", { key: index }, value);
+                })), React.createElement("h3", null, "样式"), React.createElement("p", { className: 'css1' }, "样式"));
             }
         }]);
 
         return App;
-    } (React.Component);
-    //导出
+    }(React.Component);
+    // 导出
 
 
     var mapStateToProps = function mapStateToProps(state) {
@@ -77,5 +75,4 @@ define("pages/redux/component.js", function (require, exports, module) {
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = react_redux_1.connect(mapStateToProps)(App);
 });
-
 //# sourceMappingURL=component.js.map

@@ -1,6 +1,6 @@
 {
   "name": "react-redux-router-typescript",
-  "version": "1.0.0",
+  "version": "1.0.0-dev",
   "description": "模版项目",
   "main": "index.js",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "git+https://github.com/unclemake/react-redux-router-typescript.git"
   },
   "scripts": {
-    "postinstall": "gulp makeEslint",
+    "postinstall": "gulp main",
     "start": "gulp watch",
     "test": "node test",
     "cnpm": "npm install --registry=https://registry.npm.taobao.org"
@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "axiba": "0.3.3-dev",
     "tslint-config-standard": "^1.5.0"
   }
 }

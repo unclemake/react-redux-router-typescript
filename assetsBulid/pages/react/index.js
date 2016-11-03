@@ -12,6 +12,11 @@ define("pages/react/index.js", function (require, exports, module) {
     "use strict";
 
     var React = require('node_modules/react/index');
+    /**
+     * react页面默认default 加载组件
+     * @class Component
+     * @extends {React.Component<any, any>}
+     */
 
     var Component = function (_React$Component) {
         _inherits(Component, _React$Component);
@@ -25,6 +30,10 @@ define("pages/react/index.js", function (require, exports, module) {
                 args[_key] = arguments[_key];
             }
 
+            /**
+             * 状态
+             * @memberOf Component
+             */
             var _this = _possibleConstructorReturn(this, (_ref = Component.__proto__ || Object.getPrototypeOf(Component)).call.apply(_ref, [this].concat(args)));
 
             _this.state = {
@@ -33,6 +42,11 @@ define("pages/react/index.js", function (require, exports, module) {
             };
             return _this;
         }
+        /**
+         * 点击事件 函数
+         * @memberOf Component
+         */
+
 
         _createClass(Component, [{
             key: "btnClick",
@@ -41,6 +55,12 @@ define("pages/react/index.js", function (require, exports, module) {
                     btnNu: this.state.btnNu + 1
                 });
             }
+            /**
+             * 渲染函数
+             * @returns jsx
+             * @memberOf Component
+             */
+
         }, {
             key: "render",
             value: function render() {
@@ -50,7 +70,7 @@ define("pages/react/index.js", function (require, exports, module) {
 
                 return React.createElement("section", { className: 'page-home' }, React.createElement("h2", null, "简单例子1"), React.createElement("div", null, React.createElement("a", { onClick: this.btnClick.bind(this) }, state.btnText, ":", state.btnNu), "  ", React.createElement("a", { onClick: function onClick() {
                         return _this2.btnClick();
-                    } }, state.btnText, ":", state.btnNu)), React.createElement(Component2, { nu: 10 }), React.createElement("input", null), React.createElement("input", null));
+                    } }, state.btnText, ":", state.btnNu)), React.createElement(Component2, { nu: 10 }));
             }
         }]);
 
@@ -59,6 +79,14 @@ define("pages/react/index.js", function (require, exports, module) {
 
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = Component;
+    /**
+     * Component2 组件
+     *
+     * @class Component2
+     * @extends {React.Component<{
+     *     nu: number
+     * }, any>}
+     */
 
     var Component2 = function (_React$Component2) {
         _inherits(Component2, _React$Component2);
@@ -72,6 +100,10 @@ define("pages/react/index.js", function (require, exports, module) {
                 args[_key2] = arguments[_key2];
             }
 
+            /**
+             * 初始化状态
+             * @memberOf Component2
+             */
             var _this3 = _possibleConstructorReturn(this, (_ref2 = Component2.__proto__ || Object.getPrototypeOf(Component2)).call.apply(_ref2, [this].concat(args)));
 
             _this3.state = {
@@ -79,6 +111,11 @@ define("pages/react/index.js", function (require, exports, module) {
             };
             return _this3;
         }
+        /**
+         * 点击函数
+         * @memberOf Component2
+         */
+
 
         _createClass(Component2, [{
             key: "btnClick",
@@ -87,6 +124,12 @@ define("pages/react/index.js", function (require, exports, module) {
                     btnNu: this.state.btnNu + 1
                 });
             }
+            /**
+             * 渲染
+             * @returns jsx
+             * @memberOf Component2
+             */
+
         }, {
             key: "render",
             value: function render() {

@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const {compile, run} = require('axiba');
-const config = require('eslint-config-airbnb');
 const fs = require('fs');
 
 

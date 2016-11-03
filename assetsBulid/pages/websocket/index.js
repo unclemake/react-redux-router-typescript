@@ -26,7 +26,7 @@ define("pages/websocket/index.js", function (require, exports, module) {
             key: "btnClick",
             value: function btnClick() {
                 this.setState({
-                    text: "1",
+                    text: '1',
                     text2: 'text2'
                 });
             }
@@ -35,7 +35,7 @@ define("pages/websocket/index.js", function (require, exports, module) {
             value: function render() {
                 var state = this.state;
 
-                return React.createElement("section", { className: "page=home" }, React.createElement("h2", null, "简单例子1444"), React.createElement("div", null, React.createElement("a", { onClick: this.btnClick.bind(this), className: "ant-btn" }, "点我")));
+                return React.createElement("section", { className: 'page=home' }, React.createElement("h2", null, "简单例子1444"), React.createElement("div", null, React.createElement("a", { onClick: this.btnClick.bind(this), className: 'ant-btn' }, "点我")));
             }
         }]);
 
