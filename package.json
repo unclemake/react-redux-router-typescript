@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "axiba": "0.3.3-dev",
+    "axiba": "0.3.4-dev",
     "tslint-config-standard": "^1.5.0"
   }
 }
