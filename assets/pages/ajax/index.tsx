@@ -8,18 +8,29 @@ export default class Component extends React.Component<any, any> {
         text: ''
     }
 
+    async getAjax() {
+        let res = await get('assets/components/input/index.ts');
+        this.state.text = res.text;
+        this.setState(this.state);
+        console.log('get调用结束');
+    }
 
     getClick() {
-        post('assets/components/nav/index.tsx').then(res => {
-            this.state.text = res.text;
-            this.setState(this.state);
-        })
+        this.getAjax();
+        console.log('get');
     }
 
     postClick() {
-        get('assets/components/nav/index.tsx').then(res => {
+        this.postAjax().then(() => {
+            console.log('post');
+        });
+    }
+
+    postAjax() {
+        return post('assets/components/nav/index.tsx').then(res => {
             this.state.text = res.text;
             this.setState(this.state);
+            console.log('post调用结束');
         })
     }
 

@@ -11,17 +11,19 @@ npm install gulp typescript tslint -g --registry=https://registry.npm.taobao.org
 npm install --registry=https://registry.npm.taobao.org
 ```
 
-## 安装 vscode 扩展
+## 安装 vscode 扩展 *号必装
 
-TSlint 
+Blade Runner *
 
-Document This
-
-Blade Runner
+TSlint *
 
 Path Intellisense
 
 Less IntelliSense
+
+TsTools
+
+Document This
 
 ## 启动
 (用vscode插件Blade Runner 会自启动)

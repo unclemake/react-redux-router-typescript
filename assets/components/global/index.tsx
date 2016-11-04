@@ -7,7 +7,7 @@ declare let require: any;
 function async(text) {
     return (obj, callback) => {
         // 自动解析
-        let url = text === '*' ? '../../pages/' + obj.location.pathname + '/index' : '../' + text;
+        let url = text === '*' ? '../../pages' + obj.location.pathname + '/index' : '../' + text;
 
         console.log('加载：' + url);
 
