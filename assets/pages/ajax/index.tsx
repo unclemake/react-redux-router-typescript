@@ -24,7 +24,6 @@ export default class Component extends React.Component<any, any> {
     }
 
     render() {
-        const {state} = this;
         return <section className='page-home'>
             <h2>简单例子55</h2>
             <div>

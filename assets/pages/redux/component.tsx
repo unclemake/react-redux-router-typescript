@@ -16,8 +16,6 @@ interface AppProps {
     dispatch: Dispatch<any>
 }
 
-
-
 class App extends React.Component<AppProps, any> {
     state = {
         str: ''
