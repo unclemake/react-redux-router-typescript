@@ -25,6 +25,8 @@ TsTools
 
 Document This
 
+Beautify css/sass/scss/less 
+
 ## 启动
 (用vscode插件Blade Runner 会自启动)
 ```sh
