@@ -1,13 +1,15 @@
 const gulp = require('gulp');
-const axiba = require('axiba');
+const {compile, run} = require('axiba');
 const fs = require('fs');
 
 
 gulp.task('default', function () {
-    return axiba.watch()
+    compile.watch();
+    return run();
 });
 
 gulp.task('main', function () {
-    return axiba.init()
+    return compile.makeMainFile()
+        .then(() => compile.bulid())
 });
 
