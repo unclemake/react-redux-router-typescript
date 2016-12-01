@@ -13,7 +13,7 @@ npm install --registry=https://registry.npm.taobao.org
 
 ## 安装 vscode 扩展 *号必装
 
-Blade Runner *
+Blade Runner * // 有bug开的任务关不掉
 
 TSlint *
 
@@ -69,7 +69,7 @@ gulp
         * reducer.ts      创建默认数据 和 reducer
           
           
-* index.js 全局框架 模块加载
+* index.js 全局框架 模块加载 自动生成
 * index.html 总入口
 
 ## 框架资料

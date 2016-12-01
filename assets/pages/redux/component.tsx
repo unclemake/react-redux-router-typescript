@@ -16,13 +16,16 @@ interface AppProps {
     dispatch: Dispatch<any>
 }
 
-class App extends React.Component<AppProps, any> {
+class App extends React.PureComponent<AppProps, any> {
     state = {
-        str: ''
+        str: '',
+        a: 1,
     }
     change(e) {
-        this.state.str = e.target.value;
-        this.setState(this.state);
+        // this.state.str = e.target.value;
+        this.setState({
+            str: e.target.value
+        });
     }
 
     render() {
