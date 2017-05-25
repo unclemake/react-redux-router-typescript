@@ -1,5 +1,5 @@
 # react demo
-react - redux - router - typescript 简单demo
+react - redux - router - typescript demo
 
 npm version >= 3.10.9
 nodejs version >= 6.6.0
