@@ -1,24 +1,28 @@
 import * as React from 'react';
+import { Button } from '@components/antd/index';
 
 
-export default class Component extends React.PureComponent<any, any> {
-
-    state = {
-        btnText: '点击我',
-        btnNu: 1
-    }
 
 
-    btnClick() {
-        this.setState({
-            btnNu: this.state.btnNu + 1
-        });
-    }
+/**
+ * 错误页面
+ * 
+ * @export
+ * @class Component
+ * @extends {React.Component<any, any>}
+ */
+export default class Component extends React.Component<any, any> {
 
+    /**
+     * 渲染函数
+     * @returns jsx
+     * @memberOf Component
+     */
     render() {
-        const {state} = this;
-        return <section className="page=home">
-            <h2>错误:{this.props.status}</h2>
-        </section>
+        return (<section className='page-home'>
+            <p>
+                404
+            </p>
+        </section>)
     }
 }

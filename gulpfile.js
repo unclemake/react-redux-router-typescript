@@ -1,58 +1,63 @@
 const gulp = require('gulp');
-const axiba = require('axiba');
-const fs = require('fs');
-const config = require('./config');
+const typedoc = require("gulp-typedoc");
+const cp = require('child_process');
+const axiba = require("axiba");
+const { config } = axiba;
+const tsconfig = require(process.cwd() + '/tsconfig.json').compilerOptions;
 
+config.mainModules = [];
+config.mainFile = [
+    // 'components/egret/egret.min.js',
+];
+config.merge = 'dist/pages/*/index-????????.js';
+config.paths = {
+    '@components': 'components'
+};
+config.devPort = '8081'
 
 gulp.task('default', function () {
-    for (var key in config) {
-        var element = config[key];
-        axiba.config[key] = element;
-    }
-    axiba.watch();
+    return axiba.init()
+        .then(value => axiba.serverRun())
+        .then(value => axiba.watch())
+        .then(value => cp.exec('start http://localhost:' + config.devPort));
 });
 
-gulp.task('devBuild', function () {
-    return axiba.bulid()
-        .then(() => axiba.watch())
+gulp.task('release', function () {
+    return axiba.release().then(value => axiba.serverRun());
 });
 
-gulp.task('build', function () {
-    return axiba.bulid(false)
-        .then(() => axiba.watch(false))
+gulp.task("docs", function () {
+    return gulp
+        .src(["./assets/**/*.ts", "./assets/**/*.tsx"])
+        .pipe(typedoc({
+            module: tsconfig.module,
+            target: 'es6',
+            jsx: tsconfig.jsx,
+            paths: {
+                "@components/*": [
+                    "assets/components/*"
+                ]
+            },
+            allowSyntheticDefaultImports: true,
+            baseUrl: "./",
+            incloude: ["./node_modules/@types", "./node_modules/antd"],
+
+
+            includeDeclarations: false,
+            experimentalDecorators: true,
+
+            // Output options (see typedoc docs) 
+            out: "./docs",
+
+            // TypeDoc options (see typedoc docs) 
+            name: "MyProject",
+            ignoreCompilerErrors: true,
+            excludeExternals: true,
+            version: true,
+        }))
 });
 
 
-
-// module.exports = {
-//     // 静态文件路径
-//     assets: 'assets',
-
-//     // 生成路径
-//     bulidPath: 'dist',
-//     // dev生成路径
-//     devBulidPath: 'dist-dev',
-
-//     // 默认启动页面
-//     mainPath: 'index.html',
-//     // 模块文件的路径
-//     mainJsPath: 'index.js',
-//     // 打包进模块文件的 node模块
-//     mainModules: [
-//         'react',
-//         'react-dom',
-//         'react-router',
-//         'antd',
-//         'superagent'
-//     ],
-
-//     // web访问端口
-//     devWebPort: 666,
-//     // 开发长连接端口
-//     devWatchPort: 555,
-
-//     // web访问端口
-//     webPort: 667,
-//     // 开发长连接端口
-//     watchPort: 556
-// };
+gulp.task('opendoc', function () {
+    return cp.exec('start http://localhost:' + config.devPort + '/docs/index.html');
+});

@@ -1,3 +1,10 @@
+# react dom 
+react - redux - router - typescript 简单dom
+
+npm version >= 3.10.9
+nodejs version >= 6.6.0
+
+
 ## 安装nodejs
 
 [nodejs](https://nodejs.org/en/download/)
@@ -7,13 +14,34 @@
 ## 安装
 
 ```sh
-npm install gulp typescript tslint -g --registry=https://registry.npm.taobao.org
-npm install --registry=https://registry.npm.taobao.org
+npm run install
 ```
 
-## 安装 vscode 扩展 *号必装
+## 启动
+(用vscode插件Blade Runner 会自启动)
+```sh
+npm start
+```
 
-Blade Runner * // 有bug开的任务关不掉
+## 其他命令
+发布
+```sh
+npm run release
+```
+生成文档
+```sh
+npm run docs
+```
+打开文档 必须先运行 npm start 启动服务
+```sh
+gulp opendoc
+```
+
+
+
+## vscode 插件安装 *号必装
+
+Blade Runner *
 
 TSlint *
 
@@ -27,48 +55,21 @@ Document This
 
 Beautify css/sass/scss/less 
 
-## 启动
-(用vscode插件Blade Runner 会自启动)
-```sh
-gulp 
-```
+
 
 ## 文件结构
 * components 基础组件目录
-    
-    * global        全局样式 - 初始化页面js
-        
-    * ajax          ajax组件
-        
-    * button        按钮组件
-        
-    * util          常用函数
-        
-    * validate      验证组件
-        
+
     * antd          antd 样式
-        
-* pages 基础组件目录
+
+    * global        全局样式 - 初始化页面js
+
+    * nav          导航组件
     
-    * ajax          普通页面
-        
-        * components      组件 可以是个文件 也可以是一组组件
-          
-        * index.ts        入口
-          
-    * redux         redux页面
-        
-        * components      组件 可以是个文件 也可以是一组组件
-          
-        * index.ts        入口
-          
-        * action.ts       创建action
-          
-        * model.ts        创建typescript 类型
-          
-        * reducer.ts      创建默认数据 和 reducer
-          
-          
+* pages 页面目录
+
+    * antd          页面
+
 * index.js 全局框架 模块加载 自动生成
 * index.html 总入口
 
@@ -76,13 +77,15 @@ gulp
 
 [npm](http://www.runoob.com/nodejs/nodejs-npm.html)
 
-[React](http://www.ruanyifeng.com/blog/2015/03/react.html)
+[react](https://facebook.github.io/react/docs/hello-world.html)
 
-[Redux](https://segmentfault.com/a/1190000003503338?_ea=323420)
+[redux](http://www.redux.org.cn/)
 
-[ES5](http://www.jb51.net/article/31527.htm)
+[react-router](https://reacttraining.com/react-router/web/guides/quick-start/)
 
-[ES6](http://es6.ruanyifeng.com/)
+[es5](http://www.jb51.net/article/31527.htm)
+
+[es6](http://es6.ruanyifeng.com/)
 
 [typescript](http://www.tslang.cn/)
 
@@ -90,5 +93,6 @@ gulp
 
 [redux-react-typescript 例子](https://github.com/jaysoo/todomvc-redux-react-typescript)
 
+[antd](https://ant.design/docs/react/introduce-cn)
 
 

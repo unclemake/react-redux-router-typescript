@@ -1,6 +1,5 @@
 /node_modules
-/assetsBulid
-/dependencies.json
+/docs
+/typings
+log.txt
 /dist
-/dist-dev
-/test.js

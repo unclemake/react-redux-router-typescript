@@ -1,125 +1,154 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Router, Route, Redirect, hashHistory } from 'react-router';
+import {
+    HashRouter as Router,
+    Route,
+    Link,
+    Redirect,
+    Switch,
+    RouteComponentProps
+} from 'react-router-dom';
+
 import Nav from '../nav/index';
-import Progress from '../progress/index';
+import { Provider, connect } from 'react-redux';
+import { Store, createStore, Dispatch, combineReducers } from 'redux';
+import { autobind } from 'core-decorators';
+import { Spin } from '../antd/index';
 
 declare let require: any;
-declare let __md5Array: { path: string, md5: string }[];
 
+// 缓存页面数据
+let saveState = {};
+// acitons 列表
+let acitonsList: { [key: string]: any } = {};
+/**
+ * 获取strie
+ * 
+ * @returns
+ */
+function getStore() {
+    const rootReducer = combineReducers(acitonsList);
+    const store: Store<any> = createStore(rootReducer, saveState);
+    return store;
+}
 
-class Main extends React.Component<ReactRouter.RouteComponentProps<void, void>, any> {
-
+interface IRequireEnsureProps { url: string, router: RouteComponentProps<any> };
+interface IRequireEnsureState { };
+@autobind
+class RequireEnsure extends React.Component<IRequireEnsureProps, IRequireEnsureState> {
     state = {
-        loading: 0,
-        page: <div></div>
+        page: <div></div>,
+        loading: true
     }
 
-    asyncLoading() {
-        this.asyncRender = false;
+    /**
+     * 异步加载页面
+     * 
+     * @param {any} url
+     * 
+     * @memberOf RequireEnsure
+     */
+    async requireEnsure(url) {
+        // <debug>
+        // 此行会在发布中删除
+        console.log(url);
+        // </debug>
 
-        let props = this.props;
-        // 自动解析
-        let url = props.route.path === '*' ? 'pages' + props.location.pathname + '/index.js' : 'pages/' + props.route.path + '/index.js';
-
-
-        if ((window as any).__md5Array) {
-            let md5obj = __md5Array.find(value => value.path === url);
-            if (md5obj) {
-                url = md5obj.md5;
-            }
-        }
-
-        console.log('加载：' + url);
-        this.state.loading = 0;
+        this.state.loading = true;
         this.setState(this.state);
 
-        setTimeout(() => {
-            this.state.loading = 1;
-            this.setState(this.state);
-        }, 0);
+        let path = this.props.router.match.path;
+        let obj = await require.ensure(url);
+        // 获取页面
+        let Page = obj['default'];
+        // 获取reducer
+        acitonsList[path] = obj['reducer'];
+        const store: Store<any> = getStore();
+        const mapStateToProps: any = state => {
+            // 保存每个页面的state
+            saveState = state;
+            return ({
+                data: state[path]
+            })
+        };
 
-        require.async(url, (mod) => {
-            this.state.loading = 2;
-            if (mod) {
-                let Com = mod.default;
-                this.state.page = <Com />
-                this.setState(this.state);
-            } else {
-                require.async('../../pages/error/index.js', (mod) => {
-                    let Com = mod.default;
-                    this.state.page = <Com status={404} />;
-                    this.setState(this.state);
-                })
+        // 提取data
+        let App = connect(mapStateToProps)(Page) as typeof Page;
+        this.state.page = <Provider store={store}>
+            <App router={this.props.router} store={store} />
+        </Provider>;
+        this.state.loading = false;
+        this.setState(this.state);
+    }
+
+    public render(): JSX.Element {
+        let { props, state } = this;
+        return state.loading ? <div style={{ textAlign: 'center', paddingTop: '100px' }}><Spin /></div> : state.page;
+    }
+
+    /**
+     * 重加载
+     * 
+     * @param {any} url
+     * @returns
+     * 
+     * @memberOf RequireEnsure
+     */
+    async reload(url) {
+        if (url === 'dist/index.js') {
+            window.location.reload();
+            return;
+        }
+        let bl = await window['axibaModular'].reload(url);
+        if (bl) {
+            if (url !== this.props.url) {
+                await window['axibaModular'].reload(this.props.url);
             }
-        })
-    }
-
-
-    asyncRender = false;
-    componentWillReceiveProps(nextProps) {
-        let oldLocation = this.props.location;
-        let location = nextProps.location;
-        if (oldLocation.pathname != location.pathname || oldLocation.search != location.search) {
-            this.asyncRender = true;
+            this.requireEnsure(this.props.url);
         }
     }
 
-    componentDidUpdate() {
-        if (this.asyncRender) {
-            this.asyncLoading();
+    componentWillUpdate(nextProps) {
+        if (nextProps.router.location.pathname !== this.props.router.location.pathname) {
+            // 渲染完毕再改变 不然this.props.router.match.path值不对
+            setTimeout(() => {
+                this.requireEnsure(nextProps.url);
+            }, 0);
         }
     }
-
     componentDidMount() {
-        this.asyncLoading();
-    }
-
-    getLoadingClass() {
-        switch (this.state.loading) {
-            case 0:
-                return '';
-            case 1:
-                return 'loading-box-loading';
-            case 2:
-                return 'loading-box-complete';
-        }
-    }
-
-    render() {
-        return <div className='h100'>
-            <Nav></Nav>
-            <div className={"loading-box " + this.getLoadingClass()}>
-                <div className="loading-box-inner"></div>
-            </div>
-            <main>
-                {this.state.page}
-            </main>
-        </div>;
+        this.requireEnsure(this.props.url);
+        window['__reload'] = this.reload;
     }
 }
 
-
-
+/**
+ * Router
+ * 
+ * @export
+ * @class AppRouter
+ * @extends {React.Component<any, any>}
+ */
 export default class AppRouter extends React.Component<any, any> {
 
-    async(text) {
-        return (obj, callback) => {
-            callback(null, (prop) => {
-                return <Main {...prop} ></Main>;
-            })
-        }
+    requireEnsure(url) {
+        return (props: RouteComponentProps<any>) => <RequireEnsure url={url} router={props} />
     }
 
     render() {
+        let requireEnsure = this.requireEnsure;
         return (
-            <section className='h100'>
-                <Router history={hashHistory}>
-                    <Redirect from='/' to='/react' />
-                    <Route path='dang' component={Main} />
-                    <Route path='*' component={Main} />
-                </Router>
-            </section>
+            <Router>
+                <section className='h100'>
+                    <Nav />
+                    <Switch>
+                        <Route exact path='/' render={requireEnsure('pages/react/index.js')} />
+                        <Route path='/test/:id' render={requireEnsure('pages/test/index.js')} />
+                        <Route path='/antd' render={requireEnsure('pages/antd/index.js')} />
+                        <Route render={requireEnsure('pages/error/index.js')} />
+                    </Switch>
+                </section>
+            </Router>
         )
     }
 }
@@ -128,4 +157,3 @@ ReactDOM.render(
     <AppRouter />,
     document.getElementById('app')
 );
-

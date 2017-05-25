@@ -1,15 +1,17 @@
 import * as React from 'react';
-import { Router, Route, IndexRoute, Link, IndexLink, Redirect } from 'react-router';
+import {
+    Link
+} from 'react-router-dom'
 import './index.css'
 
 export default class Component extends React.PureComponent<any, void> {
     render() {
         return <nav className='nav'>
-            <Link to="/react">react</Link>
-            <Link to="/antd">antd</Link>
-            <Link to="/redux">redux</Link>
-            <Link to="/ajax">ajax</Link>
-            <Link to="/test">test</Link>
+            <Link to='/'>react</Link>
+            <Link to='/test/1'>test1</Link>
+            <Link to='/test/2'>test2</Link>
+            <Link to='/antd'>antd</Link>
+            <Link to='/dfadfadf'>404</Link>
         </nav>
     }
 }

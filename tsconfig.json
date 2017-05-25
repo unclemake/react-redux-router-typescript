@@ -1,9 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es3",
+    "lib": [
+      "es6",
+      "es2015.promise",
+      "dom"
+    ],
     "module": "commonjs",
-    "jsx": "react",
+    "watch": false,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "sourceMap": true,
+    "isolatedModules": true,
+    "noImplicitUseStrict": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "isolatedModules": true
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "assets/components/*"
+      ]
+    }
   }
 }

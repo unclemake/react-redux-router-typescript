@@ -5,6 +5,16 @@
     "rules": {
         "semicolon": [
             false
-        ]
+        ],
+        "align": [
+            true,
+            "statements"
+        ],
+        "no-angle-bracket-type-assertion": false,
+        "whitespace": [
+            false
+        ],
+        "eofline": false,
+        "no-trailing-whitespace": false
     }
 }

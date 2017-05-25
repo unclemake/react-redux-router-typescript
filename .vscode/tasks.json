@@ -8,7 +8,7 @@
         {
             "taskName": "default",
             "args": [],
-            "isWatching": true
+            "isBuildCommand": true
         }
     ]
 }
