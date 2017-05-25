@@ -14,7 +14,7 @@ nodejs version >= 6.6.0
 ## 安装nodejs 模块
 
 ```sh
-npm run install
+npm run i
 ```
 
 ## 启动
