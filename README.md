@@ -1,5 +1,5 @@
-# react dom 
-react - redux - router - typescript 简单dom
+# react demo
+react - redux - router - typescript 简单demo
 
 npm version >= 3.10.9
 nodejs version >= 6.6.0
@@ -11,7 +11,7 @@ nodejs version >= 6.6.0
 
 [vscode](http://code.visualstudio.com/)
 
-## 安装
+## 安装nodejs 模块
 
 ```sh
 npm run install
