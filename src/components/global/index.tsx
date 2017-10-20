@@ -15,6 +15,8 @@ import { Store, createStore, Dispatch, combineReducers } from 'redux';
 import { autobind } from 'core-decorators';
 import { Spin } from '../antd/index';
 
+
+
 declare let require: any;
 
 // 缓存页面数据
@@ -99,6 +101,7 @@ class RequireEnsure extends React.Component<IRequireEnsureProps, IRequireEnsureS
             window.location.reload();
             return;
         }
+        
         let bl = await window['axibaModular'].reload(url);
         if (bl) {
             if (url !== this.props.url) {
@@ -121,6 +124,8 @@ class RequireEnsure extends React.Component<IRequireEnsureProps, IRequireEnsureS
         window['__reload'] = this.reload;
     }
 }
+
+console.log(window['axibaModular']);
 
 /**
  * Router

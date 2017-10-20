@@ -2,7 +2,6 @@ import * as React from 'react';
 import { autobind } from 'core-decorators';
 import { BasePage } from '@components/global/baseClass';
 
-
 let state = {
     text: 0
 }
@@ -36,6 +35,7 @@ export default class Component extends BasePage<{ id: number }, void> {
      */
     render() {
         const { props } = this;
+        console.log(this.state);
         return (<section className='page-home'>
             <p>
                 {props.router.match.params.id}

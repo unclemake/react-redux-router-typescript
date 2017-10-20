@@ -9,7 +9,9 @@ import {
     EDIT_TODO,
     COMPLETE_TODO,
     COMPLETE_ALL,
-    CLEAR_COMPLETED
+    CLEAR_COMPLETED,
+    EDIT_FILTER,
+    SelectedEnum
 } from './model';
 
 const addTodo = createAction<Todo, string>(
@@ -42,11 +44,17 @@ const clearCompleted = createAction<void>(
     () => null
 );
 
+const editFilter = createAction<SelectedEnum, SelectedEnum>(
+    EDIT_FILTER,
+    (selectedEnum: SelectedEnum) => selectedEnum
+);
+
 export {
     addTodo,
     deleteTodo,
     editTodo,
     completeTodo,
     completeAll,
-    clearCompleted
+    clearCompleted,
+    editFilter
 }

@@ -27,12 +27,12 @@
 <body>
 	<section id="app"></section>
 	<script>
-		axibaModular.setConfig({
-			root: '/${base}/',
-			paths: {
-				'@components': 'components'
-			}
-		}).run('@components/global/index.js');
+		axibaModular.root = '/${base}/';
+		axibaModular.paths = {
+			'@components': 'components'
+		};
+		
+		axibaModular.run('@components/global/index.js');
 	</script>
 </body>
 

@@ -2,11 +2,9 @@ import * as React from 'react';
 import { Button, message } from '@components/antd/index';
 import { autobind } from 'core-decorators';
 
-
 let state = {
     text: 0
 }
-
 
 /**
  * antd

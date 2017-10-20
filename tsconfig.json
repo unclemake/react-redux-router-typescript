@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es3",
+    "target": "es5",
     "lib": [
       "es6",
       "es2015.promise",
@@ -19,7 +19,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "assets/components/*"
+        "src/components/*"
       ]
     }
   }
