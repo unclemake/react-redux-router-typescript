@@ -2,10 +2,11 @@ export type Todo = {
     id?: number;
     text: string;
     completed: boolean;
+    edit?: boolean
 };
 
 export type IState = {
-    Filter: SelectedEnum
+    filter: SelectedEnum
     list: Todo[]
 };
 
@@ -22,3 +23,4 @@ export const COMPLETE_TODO = 'COMPLETE_TODO';
 export const COMPLETE_ALL = 'COMPLETE_ALL';
 export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
 export const EDIT_FILTER = 'EDIT_FILTER';
+export const EDIT_EDIT = 'EDIT_EDIT';

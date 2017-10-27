@@ -1,6 +1,4 @@
 import { createAction, Action } from 'redux-actions';
-import { assign } from 'lodash';
-
 import { Todo } from './model';
 
 import {
@@ -11,6 +9,7 @@ import {
     COMPLETE_ALL,
     CLEAR_COMPLETED,
     EDIT_FILTER,
+    EDIT_EDIT,
     SelectedEnum
 } from './model';
 
@@ -26,7 +25,7 @@ const deleteTodo = createAction<Todo, Todo>(
 
 const editTodo = createAction<Todo, Todo, String>(
     EDIT_TODO,
-    (todo: Todo, newText: string) => <Todo>assign(todo, { text: newText })
+    (todo: Todo, newText: string) => Object.assign(todo, { text: newText })
 );
 
 const completeTodo = createAction<Todo, Todo>(
@@ -49,6 +48,11 @@ const editFilter = createAction<SelectedEnum, SelectedEnum>(
     (selectedEnum: SelectedEnum) => selectedEnum
 );
 
+const editEdit = createAction<Todo, Todo>(
+    EDIT_EDIT,
+    (todo: Todo) => todo
+);
+
 export {
     addTodo,
     deleteTodo,
@@ -56,5 +60,6 @@ export {
     completeTodo,
     completeAll,
     clearCompleted,
-    editFilter
+    editFilter,
+    editEdit
 }

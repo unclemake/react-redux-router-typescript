@@ -1,6 +1,9 @@
 @import '../../components/global/_themes.less';
 .page-react {
     padding-top: 1px;
+    .edit-box {
+        padding-left: 53px;
+    }
     #todoapp {
         width: 500px;
         margin: 130px auto 0 auto;
@@ -43,7 +46,8 @@
         font-size: 24px;
         font-family: inherit;
         font-weight: inherit;
-        line-height: 1.4em;
+        line-height: 28px + 30;
+        height: 28px + 30;
         border: 0;
         outline: none;
         color: inherit;
@@ -169,10 +173,9 @@
     }
     #todo-list li:hover .destroy {
         display: block;
-    }
-    #todo-list li .edit {
-        display: none;
-    }
+    } // #todo-list li .edit {
+    //     display: none;
+    // }
     #todo-list li.editing:last-child {
         margin-bottom: -1px;
     }

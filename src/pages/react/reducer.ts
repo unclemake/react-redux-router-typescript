@@ -10,11 +10,12 @@ import {
     COMPLETE_ALL,
     CLEAR_COMPLETED,
     EDIT_FILTER,
+    EDIT_EDIT,
     SelectedEnum
 } from './model';
 
 const initialState: IState = {
-    Filter: SelectedEnum.All,
+    filter: SelectedEnum.All,
     list: [<Todo>{
         text: 'Use Redux with TypeScript',
         completed: false,
@@ -73,7 +74,13 @@ export let reducer = handleActions<IState, Todo | SelectedEnum>({
     },
 
     [EDIT_FILTER]: (state: IState, action: Action<SelectedEnum>): IState => {
-        state.Filter = action.payload;
+        state.filter = action.payload;
+        return { ...state };
+    },
+
+    [EDIT_EDIT]: (state: IState, action: Action<Todo>): IState => {
+        let todo = state.list.find(value => value === action.payload);
+        todo.edit = !todo.edit;
         return { ...state };
     }
 
